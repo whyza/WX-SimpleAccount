@@ -1,0 +1,8 @@
+<wxc-flex class="wrap" main="center" cross="center" _pid="{{_pid}}">
+    <view class="item"></view>
+    <view class="item"></view>
+</wxc-flex>
+
+<view class="layout-code">
+    ＜wxc-flex <view class="layout-code__point">main="center" cross="center"</view>＞...＜/wxc-flex＞
+</view>

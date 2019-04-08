@@ -1,0 +1,5 @@
+<button bindtap="showPopup">居上，有动画</button>
+
+<wxc-popup class="J_Popup" animation-mode="top" align="top" _pid="{{_pid}}">
+    <view class="popup__content">Hello World</view>
+</wxc-popup>

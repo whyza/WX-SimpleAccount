@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "example-md": "../@minui/wxc-example-md/dist/index"
+  },
+  "component": true
+}

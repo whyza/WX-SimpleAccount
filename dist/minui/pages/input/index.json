@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "example": "../../packages/@minui/wxc-example/dist/index",
+    "example-demo": "../../packages/@minui/wxc-example-demo/dist/index",
+    "example-md": "../../packages/@minui/wxc-example-md/dist/index",
+    "demo-default": "./demos/demo-default",
+    "demo-no-title": "./demos/demo-no-title",
+    "demo-radius": "./demos/demo-radius",
+    "demo-number": "./demos/demo-number",
+    "demo-icon": "./demos/demo-icon"
+  }
+}

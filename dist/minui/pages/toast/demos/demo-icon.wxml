@@ -1,0 +1,2 @@
+<wxc-toast is-show="{{$toast.show}}" icon="yes" _pid="{{_pid}}">分享成功</wxc-toast>
+<button bindtap="showToast">一个带 icon 的 toast</button>

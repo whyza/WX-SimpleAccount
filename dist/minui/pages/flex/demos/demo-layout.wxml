@@ -1,0 +1,4 @@
+<wxc-flex class="wrap" _pid="{{_pid}}">
+    <view class="item side">固定宽度</view>
+    <view class="item main">弹性宽度</view>
+</wxc-flex>

@@ -1,0 +1,58 @@
+.addbill {
+  position: fixed;
+  right: 60px;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  z-index: 999999999999;
+}
+
+.shadow {
+  box-shadow: 0 -1rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+
+.bg-green {
+  background-color: #39b54a;
+  color: #fff;
+}
+
+.add-action .add {
+  position: absolute;
+  width: 80rpx;
+  z-index: 999999999;
+  height: 80rpx;
+  border-radius: 50%;
+  line-height: 80rpx;
+  font-size: 50rpx;
+  top: -35rpx;
+  left: 8px;
+  right: 0;
+  margin: auto;
+  padding: 0;
+}
+/* 
+.add-action::after {
+  content: "";
+  position: absolute;
+  width: 110rpx;
+  height: 110rpx;
+  top: -50rpx;
+  right: 20px;
+  margin: auto;
+  box-shadow: 0 -3rpx 8rpx rgba(0, 0, 0, 0.08);
+  border-radius: 70rpx;
+  background-color: inherit;
+  z-index: 0;
+}
+
+.add-action::before {
+  content: "";
+  position: absolute;
+  width: 110rpx;
+  height: 40rpx;
+  bottom: 30rpx;
+  right: 20px;
+  margin: auto;
+  background-color: inherit;
+  z-index: 1;
+} */

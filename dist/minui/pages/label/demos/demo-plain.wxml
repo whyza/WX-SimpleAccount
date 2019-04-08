@@ -1,0 +1,5 @@
+<wxc-label class="label" _pid="{{_pid}}">双11价</wxc-label>
+<wxc-label class="label" _pid="{{_pid}}">限时折扣</wxc-label>
+<wxc-label class="label" _pid="{{_pid}}">
+    <wxc-icon type="pintuan" size="20" _pid="{{_pid}}"></wxc-icon> 拼团秒杀
+</wxc-label>

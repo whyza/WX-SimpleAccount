@@ -1,0 +1,3 @@
+<view class="add-action addbill shadow">
+  <button class='add bg-green shadow'>+</button>
+</view>

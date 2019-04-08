@@ -1,0 +1,12 @@
+.search-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90rpx;
+    color: #fff;
+    background: #f6f6f6;
+  }
+  .search {
+    flex: 1;
+    margin: 0 24rpx;
+  }

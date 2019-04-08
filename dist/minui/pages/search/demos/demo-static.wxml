@@ -1,0 +1,3 @@
+<view class="search-wrap">
+    <wxc-search class="search" mode="static" align="center" bg-color="#fff" _pid="{{_pid}}"></wxc-search>
+</view>

@@ -1,0 +1,5 @@
+.price-demo {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #ff4422;
+  }

@@ -1,0 +1,15 @@
+<wxc-flex class="wrap" main="{{main}}" _pid="{{_pid}}">
+    <view class="item">栏 1</view>
+    <view class="item">栏 2</view>
+    <view class="item">栏 3</view>
+</wxc-flex>
+
+<view class="layout-code">
+    ＜wxc-flex <view class="layout-code__point">main="{{main}}"</view>＞...＜/wxc-flex＞
+</view>
+
+<view class="setting-button" bindtap="setMainToStart">启点排列(默认)</view>
+<view class="setting-button" bindtap="setMainToEnd">终点排列</view>
+<view class="setting-button" bindtap="setMainToBetween">两端对齐</view>
+<view class="setting-button" bindtap="setMainToCenter">居中对齐</view>
+<view class="setting-button" bindtap="setMainToAround">等间分布</view>

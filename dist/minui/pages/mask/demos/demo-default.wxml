@@ -1,0 +1,7 @@
+<wxc-mask class="J_mask" content-align="cc" bind:masktap="maskTap" _pid="{{_pid}}">
+    <view class="content">
+        <button class="btn" bindtap="hideMask">隐藏遮罩层</button>
+    </view>
+</wxc-mask>
+
+<button bindtap="showMask">显示遮罩层</button>

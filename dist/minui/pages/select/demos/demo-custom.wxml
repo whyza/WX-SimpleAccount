@@ -1,0 +1,1 @@
+<wxc-select items="{{items}}" color="#28a745" checked="1" bind:change="onChange" _pid="{{_pid}}"></wxc-select>

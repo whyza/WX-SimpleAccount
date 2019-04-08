@@ -1,0 +1,161 @@
+<!-- 预算，支出，收入 -->
+<view class="main">
+  <image class="img" src='../../image/user_bg.png' mode='aspectFill'></image>
+  <i-icon class='ac-date' type="activity" size="40" />
+  <picker class='now-date' mode="date" :value="date" start="2015-09-01" end="{{date}}" bindchange='dateChange '>
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+  <view class='zhichu'>今日支出
+    <span class='zhichu-num'>
+      123$
+    </span>
+  </view>
+  <view class='shouru'>今日收入
+    <span class='zhichu-num'>
+      123$
+    </span>
+  </view>
+  <view class="i-sticky-demo container">
+    <i-sticky scrollTop="{{scrollTop}}">
+      <i-sticky-item i-class="i-sticky-demo-title">
+        <view slot="title">
+          <view class='date-time'>2019-3-27
+            <span class="date">周六</span>
+            <span class="fr">
+              <span class="add">
+                收入
+                <span class="nummber">123$</span>
+              </span>
+              <span class="sub">
+                支出
+                <span class="nummber">321$</span>
+              </span>
+            </span>
+          </view>
+        </view>
+        <view slot="content">
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s3.mogucdn.com/mlcdn/1689c6/180330_8gak8gf7809jhfi8i0l90i79bca3g_400x400.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s3.mogucdn.com/mlcdn/1689c6/180330_8gak8gf7809jhfi8i0l90i79bca3g_400x400.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+        </view>
+      </i-sticky-item>
+      <i-sticky-item i-class="i-sticky-demo-title">
+        <view slot="title">
+          视图层 2019-3-27
+        </view>
+        <view slot="content">
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s3.mogucdn.com/mlcdn/1689c6/180330_8gak8gf7809jhfi8i0l90i79bca3g_400x400.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s3.mogucdn.com/mlcdn/1689c6/180330_8gak8gf7809jhfi8i0l90i79bca3g_400x400.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s3.mogucdn.com/mlcdn/1689c6/180330_8gak8gf7809jhfi8i0l90i79bca3g_400x400.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+        </view>
+      </i-sticky-item>
+      <i-sticky-item i-class="i-sticky-demo-title">
+        <view slot="title">
+          自定义组件
+        </view>
+        <view slot="content">
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s3.mogucdn.com/mlcdn/1689c6/180330_8gak8gf7809jhfi8i0l90i79bca3g_400x400.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+        </view>
+      </i-sticky-item>
+      <i-sticky-item i-class="i-sticky-demo-title">
+        <view slot="title">
+          插件
+        </view>
+        <view slot="content">
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s3.mogucdn.com/mlcdn/1689c6/180330_8gak8gf7809jhfi8i0l90i79bca3g_400x400.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <view class="i-sticky-demo-item">
+            <view class="list-check">
+              <image class="list-image radius" mode="aspectFill" src="http://s2.mogucdn.com/new1/v1/bdefaultavatar/04.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+            </view>
+          </view>
+          <!-- <view class="i-sticky-demo-item"> -->
+          <view class="list-check">
+            <image class="list-image radius" mode="aspectFill" src="http://s3.mogucdn.com/mlcdn/1689c6/180330_8gak8gf7809jhfi8i0l90i79bca3g_400x400.jpg"></image>
+              <wxc-list class="item" title="标题文字" detail="内容描述" desc="收入：123￥"  sub="支出：123￥" dot dot-color="#f5123e "></wxc-list>
+          </view>
+          <!-- </view> -->
+        </view>
+      </i-sticky-item>
+    </i-sticky>
+  </view>
+  <custom-tabbar></custom-tabbar>
+</view>

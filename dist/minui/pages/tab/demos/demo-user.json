@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "wxc-tab": "../../../packages/wxc-tab/dist/index",
+    "wxc-tab-panel": "../../../packages/wxc-tab/dist/panel",
+    "wxc-tab-label": "../../../packages/wxc-tab/dist/label"
+  },
+  "component": true
+}

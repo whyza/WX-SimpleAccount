@@ -1,0 +1,27 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="tab" desc="选项卡" _pid="{{_pid}}">
+
+        <example-demo title="基础版本" desc="小于等于4个tab" _pid="{{_pid}}" source="{{__code__.demoDefault}}">
+            <demo-default _pid="{{_pid}}"></demo-default>
+        </example-demo>
+
+        <example-demo title="动画版" desc="可改变颜色，默认选中超出范围" _pid="{{_pid}}" source="{{__code__.demoAnimate}}">
+            <demo-animate _pid="{{_pid}}"></demo-animate>
+        </example-demo>
+
+        <example-demo title="多个tab" desc="可滑动，有动画" _pid="{{_pid}}" source="{{__code__.demoMulti}}">
+            <demo-multi _pid="{{_pid}}"></demo-multi>
+        </example-demo>
+
+        <example-demo title="自定义头部" desc="可自定义头部" _pid="{{_pid}}" source="{{__code__.demoUser}}">
+            <demo-user _pid="{{_pid}}"></demo-user>
+        </example-demo>
+
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

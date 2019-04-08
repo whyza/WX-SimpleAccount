@@ -1,0 +1,31 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="label" desc="标签" _pid="{{_pid}}">
+
+        <example-demo title="默认用法" desc="" _pid="{{_pid}}" source="{{__code__.demoPlain}}">
+            <demo-plain _pid="{{_pid}}"></demo-plain>
+        </example-demo>
+
+        <example-demo title="属性传值" desc="" _pid="{{_pid}}" source="{{__code__.demoValue}}">
+            <demo-value _pid="{{_pid}}"></demo-value>
+        </example-demo>
+
+        <example-demo title="非镂空状态" desc="" _pid="{{_pid}}" source="{{__code__.demoFill}}">
+            <demo-fill _pid="{{_pid}}"></demo-fill>
+        </example-demo>
+
+        <example-demo title="自定义色值" desc="" _pid="{{_pid}}" source="{{__code__.demoCustom}}">
+            <demo-custom _pid="{{_pid}}"></demo-custom>
+        </example-demo>
+
+        <example-demo title="图片角标" desc="" _pid="{{_pid}}" source="{{__code__.demoCorner}}">
+            <demo-corner _pid="{{_pid}}"></demo-corner>
+        </example-demo>
+
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

@@ -1,0 +1,23 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="loading" desc="加载提示" _pid="{{_pid}}">
+
+        <example-demo title="设置type" desc="type: mall，小店微商城loading样式" _pid="{{_pid}}" source="{{__code__.demoDefault}}">
+            <demo-default _pid="{{_pid}}"></demo-default>
+        </example-demo>
+
+        <example-demo title="配置图片" desc="配置女装小程序 loading 背景图" _pid="{{_pid}}" source="{{__code__.demoCustom}}">
+            <demo-custom _pid="{{_pid}}"></demo-custom>
+        </example-demo>
+
+        <example-demo title="调用方法控制显示" desc="调用 show() 方法显示 loading" _pid="{{_pid}}" source="{{__code__.demoMethod}}">
+            <demo-method _pid="{{_pid}}"></demo-method>
+        </example-demo>
+
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

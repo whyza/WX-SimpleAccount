@@ -1,0 +1,15 @@
+.message {
+    width: 100rpx;
+    height: 100rpx;
+    position: relative;
+  }
+  .message__avatar {
+    display: block;
+    width: 100rpx;
+    height: 100rpx;
+  }
+  .message__badge {
+    position: absolute;
+    top: -16rpx;
+    right: -18rpx;
+  }

@@ -1,0 +1,2 @@
+<wxc-toast is-show="{{$toast.show}}" src="https://s10.mogucdn.com//mlcdn/c45406/171017_885a650c746k7hajhf04aja566h1i_68x68.png" text="{{$toast.title}}" _pid="{{_pid}}"></wxc-toast>
+<button bindtap="showToast">自定义 icon 图片的 toast</button>

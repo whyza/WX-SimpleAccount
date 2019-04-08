@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "custom-tabbar": "/components/custom-tabbar/custom-tabbar",
+    "ff-canvas": "@antv/f2-canvas"
+  }
+}

@@ -1,0 +1,19 @@
+.wrap {
+    display: block;
+    height: 300rpx;
+    background: #696969;
+  }
+  .item {
+    font-size: 20rpx;
+    line-height: 300rpx;
+    text-align: center;
+  }
+  .side {
+    width: 200rpx;
+    background: #afdde3;
+    flex-grow: 0;
+  }
+  .main {
+    background: #f397b2;
+    flex-grow: 1;
+  }

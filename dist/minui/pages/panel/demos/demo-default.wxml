@@ -1,0 +1,3 @@
+<wxc-panel title="标题" bind:click="onClick" _pid="{{_pid}}">
+    <view class="content">内容</view>
+</wxc-panel>

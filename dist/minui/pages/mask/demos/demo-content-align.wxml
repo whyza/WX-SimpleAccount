@@ -1,0 +1,5 @@
+<wxc-mask status="{{maskStatus}}" content-align="bl" _pid="{{_pid}}">
+    <view class="mask-demo_content">定位到页面左下角</view>
+</wxc-mask>
+
+<button bindtap="showMask">子节点定位</button>

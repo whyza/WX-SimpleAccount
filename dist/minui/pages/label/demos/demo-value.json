@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "wxc-label": "../../../packages/wxc-label/dist/index",
+    "wxc-icon": "../../../packages/wxc-icon/dist/index"
+  },
+  "component": true
+}

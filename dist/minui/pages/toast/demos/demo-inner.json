@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxc-toast": "../../../packages/wxc-toast/dist/index"
+  },
+  "component": true
+}

@@ -1,0 +1,19 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="elip" desc="文本截断" _pid="{{_pid}}">
+
+        <example-demo title="单行文本截断" desc="" _pid="{{_pid}}" source="{{__code__.demoDefault}}">
+            <demo-default _pid="{{_pid}}"></demo-default>
+        </example-demo>
+
+        <example-demo title="多行文本截断" desc="通过 line 属性设置容许的行数" _pid="{{_pid}}" source="{{__code__.demoMultiple}}">
+            <demo-multiple _pid="{{_pid}}"></demo-multiple>
+        </example-demo>
+
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

@@ -1,0 +1,26 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="countdown" desc="倒计时" _pid="{{_pid}}">
+
+        <example-demo title="基础调用" desc="只传参倒计时秒数 countdown" _pid="{{_pid}}" source="{{__code__.demoDefault}}">
+            <demo-default _pid="{{_pid}}"></demo-default>
+        </example-demo>
+
+        <example-demo title="格式设置" desc="传参倒计时秒数以及展示格式 format" _pid="{{_pid}}" source="{{__code__.demoFormat}}">
+            <demo-format _pid="{{_pid}}"></demo-format>
+        </example-demo>
+
+        <example-demo title="样式设置" desc="自定义样式" _pid="{{_pid}}" source="{{__code__.demoStyle}}">
+            <demo-style _pid="{{_pid}}"></demo-style>
+        </example-demo>
+
+        <example-demo title="事件监听" desc="监听 runcount、endcount 事件" _pid="{{_pid}}" source="{{__code__.demoEvent}}">
+            <demo-event _pid="{{_pid}}"></demo-event>
+        </example-demo>
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

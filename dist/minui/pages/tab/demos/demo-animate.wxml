@@ -1,0 +1,6 @@
+<wxc-tab bind:tabchange="onClick" default-index="{{4}}" active-text-color="#108ee9" active-line-color="#108ee9" component-id="c1" animate="{{true}}" _pid="{{_pid}}">
+    <wxc-tab-panel wx:for="{{tabs}}" wx:for-item="tab" wx:key="{{tab.content}}" tab-index="{{index}}" component-id="c1" label="{{tab.title}}" _pid="{{_pid}}">
+        {{tab.content}}
+    </wxc-tab-panel>
+
+</wxc-tab>

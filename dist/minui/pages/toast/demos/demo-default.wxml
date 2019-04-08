@@ -1,0 +1,2 @@
+<wxc-toast is-show="{{$toast.show}}" text="Hello World" _pid="{{_pid}}"></wxc-toast>
+<button bindtap="showToast">属性传值</button>

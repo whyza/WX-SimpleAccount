@@ -1,0 +1,9 @@
+<view class="wrap">
+    <image class="img" src="https://s10.mogucdn.com/mlcdn/c45406/171025_462jgf26k954504k111664ck0ek5j_640x640.jpg"></image>
+    <wxc-label class="label" type="corner" _pid="{{_pid}}">抽奖团</wxc-label>
+</view>
+
+<view class="wrap">
+    <image class="img" src="https://s10.mogucdn.com/mlcdn/c45406/171025_83j9gbl58kk4f04e7kjd5l82a6i92_640x640.jpg"></image>
+    <wxc-label class="label" type="corner" _pid="{{_pid}}">老带新</wxc-label>
+</view>

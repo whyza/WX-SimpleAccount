@@ -1,0 +1,26 @@
+.search-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90rpx;
+    color: #fff;
+    background: #fb4747;
+    border-bottom: 1rpx solid #fb4747;
+  }
+  .search-location {
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-left: 22rpx;
+    font-size: 26rpx;
+    overflow: hidden;
+  }
+  .search {
+    flex-grow: 1;
+    margin: 15rpx 24rpx;
+  }
+  .search-icon {
+    width: 44rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-right: 22rpx;
+  }

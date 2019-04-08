@@ -1,0 +1,4 @@
+<view class="input-wrap">
+    <wxc-input type="text" icon="search" placeholder="搜索从这里开始" _pid="{{_pid}}">
+    </wxc-input>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxc-loadmore": "../../../packages/wxc-loadmore/dist/index"
+  },
+  "component": true
+}

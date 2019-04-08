@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "example": "../../packages/@minui/wxc-example/dist/index",
+    "example-demo": "../../packages/@minui/wxc-example-demo/dist/index",
+    "example-md": "../../packages/@minui/wxc-example-md/dist/index",
+    "demo-default-end": "./demos/demo-default-end",
+    "demo-default-img-end": "./demos/demo-default-img-end",
+    "demo-text-end": "./demos/demo-text-end",
+    "demo-default-loading": "./demos/demo-default-loading",
+    "demo-user-end": "./demos/demo-user-end",
+    "demo-text-loading": "./demos/demo-text-loading",
+    "demo-user-loading": "./demos/demo-user-loading"
+  }
+}

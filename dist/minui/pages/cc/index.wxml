@@ -1,0 +1,23 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="wxc-cc" desc="水平垂直居中" _pid="{{_pid}}">
+
+        <example-demo title="默认示例" desc="一个水平垂直居中的图片" _pid="{{_pid}}" source="{{__code__.demoDefault}}">
+            <demo-default _pid="{{_pid}}"></demo-default>
+        </example-demo>
+
+        <example-demo title="多元素" desc="" _pid="{{_pid}}" source="{{__code__.demoMultiple}}">
+            <demo-multiple _pid="{{_pid}}"></demo-multiple>
+        </example-demo>
+
+        <example-demo title="图片加一换行的文字" desc="" _pid="{{_pid}}" source="{{__code__.demoWrap}}">
+            <demo-wrap _pid="{{_pid}}"></demo-wrap>
+        </example-demo>
+
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

@@ -1,0 +1,22 @@
+<wxc-flex class="wrap" wrap="{{wrap}}" _pid="{{_pid}}">
+    <view class="item">栏 1</view>
+    <view class="item">栏 2</view>
+    <view class="item">栏 3</view>
+    <view class="item">栏 4</view>
+    <view class="item">栏 5</view>
+    <view class="item">栏 6</view>
+    <view class="item">栏 7</view>
+    <view class="item">栏 8</view>
+    <view class="item">栏 9</view>
+    <view class="item">栏 10</view>
+    <view class="item">栏 11</view>
+    <view class="item">栏 12</view>
+</wxc-flex>
+
+<view class="layout-code">
+    ＜wxc-flex <view class="layout-code__point">wrap="{{wrap}}"</view>＞...＜/wxc-flex＞
+</view>
+
+<view class="setting-button" bindtap="setWrapToNowrap">不换行(默认)</view>
+<view class="setting-button" bindtap="setWrapToWrap">正序换行</view>
+<view class="setting-button" bindtap="setWrapToReverse">倒序换行</view>

@@ -1,0 +1,38 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="progress" desc="进度条" _pid="{{_pid}}">
+
+        <example-demo title="百分比" desc="percent 属性设置进度的百分比" _pid="{{_pid}}" source="{{__code__.demoDefault}}">
+            <demo-default _pid="{{_pid}}"></demo-default>
+        </example-demo>
+
+
+        <example-demo title="宽度" desc="stroke-width 属性设置进度条的宽度" _pid="{{_pid}}" source="{{__code__.demoWidth}}">
+            <demo-width _pid="{{_pid}}"></demo-width>
+        </example-demo>
+
+        <example-demo title="前景色" desc="active-color 属性设置前景色" _pid="{{_pid}}" source="{{__code__.demoActiveColor}}">
+            <demo-active-color _pid="{{_pid}}"></demo-active-color>
+        </example-demo>
+
+
+        <example-demo title="渐变的前景色" desc="以英文逗号区分左右两端色值" _pid="{{_pid}}" source="{{__code__.demoActiveLineColor}}">
+            <demo-active-line-color _pid="{{_pid}}"></demo-active-line-color>
+        </example-demo>
+
+
+        <example-demo title="背景色" desc="background-color 属性设置背景色" _pid="{{_pid}}" source="{{__code__.demoBgColor}}">
+            <demo-bg-color _pid="{{_pid}}"></demo-bg-color>
+        </example-demo>
+
+        <example-demo title="圆角" desc="radius 属性设置圆角的角度值" _pid="{{_pid}}" source="{{__code__.demoRadius}}">
+            <demo-radius _pid="{{_pid}}"></demo-radius>
+        </example-demo>
+
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

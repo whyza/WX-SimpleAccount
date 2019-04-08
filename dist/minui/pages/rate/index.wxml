@@ -1,0 +1,35 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="wxc-rate" desc="评分" _pid="{{_pid}}">
+
+        <example-demo title="基础用法" desc="" _pid="{{_pid}}" source="{{__code__.demoDefault}}">
+            <demo-default _pid="{{_pid}}"></demo-default>
+        </example-demo>
+
+        <example-demo title="设置默认值" desc="" _pid="{{_pid}}" source="{{__code__.demoValue}}">
+            <demo-value _pid="{{_pid}}"></demo-value>
+        </example-demo>
+
+        <example-demo title="设置个数" desc="" _pid="{{_pid}}" source="{{__code__.demoCount}}">
+            <demo-count _pid="{{_pid}}"></demo-count>
+        </example-demo>
+
+        <example-demo title="自定义颜色" desc="" _pid="{{_pid}}" source="{{__code__.demoColor}}">
+            <demo-color _pid="{{_pid}}"></demo-color>
+        </example-demo>
+
+        <example-demo title="自定义大小" desc="" _pid="{{_pid}}" source="{{__code__.demoSize}}">
+            <demo-size _pid="{{_pid}}"></demo-size>
+        </example-demo>
+
+        <example-demo title="只读" desc="" _pid="{{_pid}}" source="{{__code__.demoReadonly}}">
+            <demo-readonly _pid="{{_pid}}"></demo-readonly>
+        </example-demo>
+
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

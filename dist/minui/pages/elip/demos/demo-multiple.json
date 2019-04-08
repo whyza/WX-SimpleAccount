@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxc-elip": "../../../packages/wxc-elip/dist/index"
+  },
+  "component": true
+}

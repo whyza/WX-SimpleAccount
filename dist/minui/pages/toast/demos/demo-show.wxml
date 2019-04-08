@@ -1,0 +1,2 @@
+<wxc-toast class="J_toast" text="Hello World" _pid="{{_pid}}"></wxc-toast>
+<button bindtap="showToast">调用 show() 方法显示</button>

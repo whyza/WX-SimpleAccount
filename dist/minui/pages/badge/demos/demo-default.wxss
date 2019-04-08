@@ -1,0 +1,16 @@
+.user {
+    width: 100rpx;
+    height: 100rpx;
+    position: relative;
+  }
+  .user__avatar {
+    display: block;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+  }
+  .user__un-read-msg-count {
+    position: absolute;
+    top: -16rpx;
+    right: -8rpx;
+  }

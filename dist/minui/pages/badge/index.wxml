@@ -1,0 +1,31 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="badge" desc="徽章" _pid="{{_pid}}">
+
+        <example-demo title="默认姿势" desc="" _pid="{{_pid}}" source="{{__code__.demoDefault}}">
+            <demo-default _pid="{{_pid}}"></demo-default>
+        </example-demo>
+
+        <example-demo title="value 传值" desc="优先级高于标签内嵌套值" _pid="{{_pid}}" source="{{__code__.demoValue}}">
+            <demo-value _pid="{{_pid}}"></demo-value>
+        </example-demo>
+
+        <example-demo title="最大值边界" desc="仅对 value 传值有效" _pid="{{_pid}}" source="{{__code__.demoMax}}">
+            <demo-max _pid="{{_pid}}"></demo-max>
+        </example-demo>
+
+        <example-demo title="个性化支持" desc="" _pid="{{_pid}}" source="{{__code__.demoOther}}">
+            <demo-other _pid="{{_pid}}"></demo-other>
+        </example-demo>
+
+        <example-demo title="红点模式" desc="弱提示，显示为一个红点" _pid="{{_pid}}" source="{{__code__.demoDot}}">
+            <demo-dot _pid="{{_pid}}"></demo-dot>
+        </example-demo>
+
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

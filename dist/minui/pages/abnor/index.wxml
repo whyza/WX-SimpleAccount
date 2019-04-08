@@ -1,0 +1,63 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="abnor" desc="异常流展示" _pid="{{_pid}}">
+
+        <example-demo title="REQUEST_ERROR" desc="网络异常状态，默认配置了按钮，需要添加事件" _pid="{{_pid}}" source="{{__code__.demoDefault}}">
+            <demo-default _pid="{{_pid}}"></demo-default>
+        </example-demo>
+
+        <example-demo title="NOT_FOUND" desc="页面不存在，默认配置了按钮，需要添加事件" _pid="{{_pid}}" source="{{__code__.demoNotFound}}">
+            <demo-not-found _pid="{{_pid}}"></demo-not-found>
+        </example-demo>
+
+        <example-demo title="自定义数据" desc="自定义属性。自定义属性的优先级高于type" _pid="{{_pid}}" source="{{__code__.demoCustom}}">
+            <demo-custom _pid="{{_pid}}"></demo-custom>
+        </example-demo>
+
+        <example-demo title="DATA" desc="数据为空" _pid="{{_pid}}" source="{{__code__.demoData}}">
+            <demo-data _pid="{{_pid}}"></demo-data>
+        </example-demo>
+
+        <example-demo title="FOLLOW" desc="无关注状态" _pid="{{_pid}}" source="{{__code__.demoFollow}}">
+            <demo-follow _pid="{{_pid}}"></demo-follow>
+        </example-demo>
+
+        <example-demo title="FEED" desc="无反馈状态" _pid="{{_pid}}" source="{{__code__.demoFeed}}">
+            <demo-feed _pid="{{_pid}}"></demo-feed>
+        </example-demo>
+
+        <example-demo title="SHOP" desc="找不到相关店铺" _pid="{{_pid}}" source="{{__code__.demoShop}}">
+            <demo-shop _pid="{{_pid}}"></demo-shop>
+        </example-demo>
+
+        <example-demo title="SEARCH" desc="没有找到相关商品" _pid="{{_pid}}" source="{{__code__.demoSearch}}">
+            <demo-search _pid="{{_pid}}"></demo-search>
+        </example-demo>
+
+        <example-demo title="MESSAGE" desc="消息通知空状态" _pid="{{_pid}}" source="{{__code__.demoMessage}}">
+            <demo-message _pid="{{_pid}}"></demo-message>
+        </example-demo>
+
+        <example-demo title="ORDER" desc="空订单列表状态" _pid="{{_pid}}" source="{{__code__.demoOrder}}">
+            <demo-order _pid="{{_pid}}"></demo-order>
+        </example-demo>
+
+        <example-demo title="CART" desc="空购物车状态" _pid="{{_pid}}" source="{{__code__.demoCart}}">
+            <demo-cart _pid="{{_pid}}"></demo-cart>
+        </example-demo>
+
+        <example-demo title="FOOTPRINT" desc="空足迹状态" _pid="{{_pid}}" source="{{__code__.demoFootprint}}">
+            <demo-footprint _pid="{{_pid}}"></demo-footprint>
+        </example-demo>
+
+        <example-demo title="COUPON" desc="无优惠券状态" _pid="{{_pid}}" source="{{__code__.demoCoupon}}">
+            <demo-coupon _pid="{{_pid}}"></demo-coupon>
+        </example-demo>
+
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "wxc-list": "../../packages/wxc-list/dist/index"
+  }
+}

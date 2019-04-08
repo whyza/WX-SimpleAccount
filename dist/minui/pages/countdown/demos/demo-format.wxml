@@ -1,0 +1,1 @@
+<wxc-countdown countdown="{{countdown}}" format="{{format}}" _pid="{{_pid}}"></wxc-countdown>

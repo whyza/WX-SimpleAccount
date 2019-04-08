@@ -1,0 +1,2 @@
+<button bindtap="showDialog">标题+图片+单行内容+确认按钮</button>
+<wxc-dialog class="wxc-dialog" title="标题" content="描述内容，最好不超过一行" confirm-text="知道了" image="http://s2.mogucdn.com/b7/pic/141204/icfa_ieydsntfgu3taytfmqytambqgiyde_640x960.jpg_468x468.jpg" bindconfirm="onConfirm" bindcancel="onCancel" _pid="{{_pid}}"></wxc-dialog>

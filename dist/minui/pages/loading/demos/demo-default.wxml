@@ -1,0 +1,2 @@
+<wxc-loading is-show="{{$loading.isShow}}" type="mall" _pid="{{_pid}}"></wxc-loading>
+<button bindtap="showLoading">设置 type</button>

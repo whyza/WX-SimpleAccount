@@ -1,0 +1,3 @@
+<view class="search-wrap">
+    <wxc-search class="search" showClear="{{false}}" bg-color="rgba(255, 255, 255, 0.18)" color="#fff" icon-color="#cacff1" ph-color="#cacff1" placeholder="请输入 直播内容/主播/商品" _pid="{{_pid}}"></wxc-search>
+</view>

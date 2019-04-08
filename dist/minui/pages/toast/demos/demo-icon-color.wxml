@@ -1,0 +1,2 @@
+<wxc-toast is-show="{{$toast.show}}" text="分享成功" icon="yes" icon-color="#ff5777" _pid="{{_pid}}"></wxc-toast>
+<button bindtap="showToast">自定义 icon 颜色的 toast</button>

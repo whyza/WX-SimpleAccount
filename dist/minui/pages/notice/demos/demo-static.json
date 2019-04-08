@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxc-notice": "../../../packages/wxc-notice/dist/index"
+  },
+  "component": true
+}

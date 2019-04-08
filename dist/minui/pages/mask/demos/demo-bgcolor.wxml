@@ -1,0 +1,3 @@
+<wxc-mask status="{{maskStatus}}" background-color="#ff5577" _pid="{{_pid}}"></wxc-mask>
+
+<button bindtap="showMask">自定义背景色</button>

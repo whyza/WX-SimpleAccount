@@ -1,0 +1,39 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="loadmore" desc="加载更多" _pid="{{_pid}}">
+
+        <example-demo title="默认到底" desc="随机的icon和文字" _pid="{{_pid}}" source="{{__code__.demoDefaultEnd}}">
+            <demo-default-end _pid="{{_pid}}"></demo-default-end>
+        </example-demo>
+
+        <example-demo title="只有文字到底" desc="只显示文字，没有icon" _pid="{{_pid}}" source="{{__code__.demoTextEnd}}">
+            <demo-text-end _pid="{{_pid}}"></demo-text-end>
+        </example-demo>
+
+        <example-demo title="自定义icon到底" desc="icon自定义，文字随机" _pid="{{_pid}}" source="{{__code__.demoUserEnd}}">
+            <demo-user-end _pid="{{_pid}}"></demo-user-end>
+        </example-demo>
+
+        <example-demo title="自定义文字到底" desc="文字自定义，图片随机" _pid="{{_pid}}" source="{{__code__.demoDefaultImgEnd}}">
+            <demo-default-img-end _pid="{{_pid}}"></demo-default-img-end>
+        </example-demo>
+
+        <example-demo title="默认加载" desc="默认icon加载中" _pid="{{_pid}}" source="{{__code__.demoDefaultLoading}}">
+            <demo-default-loading _pid="{{_pid}}"></demo-default-loading>
+        </example-demo>
+
+        <example-demo title="自定义文字加载" desc="文字自定义" _pid="{{_pid}}" source="{{__code__.demoTextLoading}}">
+            <demo-text-loading _pid="{{_pid}}"></demo-text-loading>
+        </example-demo>
+
+        <example-demo title="自定义图片加载" desc="icon文字都自定义" _pid="{{_pid}}" source="{{__code__.demoUserLoading}}">
+            <demo-user-loading _pid="{{_pid}}"></demo-user-loading>
+        </example-demo>
+
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

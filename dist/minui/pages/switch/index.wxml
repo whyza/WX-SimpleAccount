@@ -1,0 +1,27 @@
+<view>
+    <!--<layout-head></layout-head>-->
+
+    <!-- wxp template -->
+    <example title="switch" desc="开关" _pid="{{_pid}}">
+
+        <example-demo title="默认用法" desc="" _pid="{{_pid}}" source="{{__code__.demoDefault}}">
+            <demo-default _pid="{{_pid}}"></demo-default>
+        </example-demo>
+
+        <example-demo title="自定义 on 状态色" desc="" _pid="{{_pid}}" source="{{__code__.demoColor}}">
+            <demo-color _pid="{{_pid}}"></demo-color>
+        </example-demo>
+
+        <example-demo title="禁用态" desc="" _pid="{{_pid}}" source="{{__code__.demoDisabled}}">
+            <demo-disabled _pid="{{_pid}}"></demo-disabled>
+        </example-demo>
+
+        <example-demo title="回调方法" desc="" _pid="{{_pid}}" source="{{__code__.demoCallback}}">
+            <demo-callback _pid="{{_pid}}"></demo-callback>
+        </example-demo>
+
+        <example-md content="{{__code__.readme}}" _pid="{{_pid}}"></example-md>
+    </example>
+
+    <!--<layout-foot></layout-foot>-->
+</view>

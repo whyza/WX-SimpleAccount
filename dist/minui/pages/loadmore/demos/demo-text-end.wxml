@@ -1,0 +1,2 @@
+<wxc-loadmore is-end="{{true}}" text="到底啦" _pid="{{_pid}}">
+</wxc-loadmore>

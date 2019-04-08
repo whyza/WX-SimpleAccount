@@ -1,0 +1,3 @@
+<view class="search-wrap">
+    <wxc-search class="search" show-icon="{{false}}" bg-color="#fff" button="搜索" btn-color="#2CB42F" bind:input="onInput" bind:submit="submitForm" bind:confirm="onConfirm" _pid="{{_pid}}"></wxc-search>
+</view>

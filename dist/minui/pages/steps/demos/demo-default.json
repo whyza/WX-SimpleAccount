@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxc-steps": "../../../packages/wxc-steps/dist/index"
+  },
+  "component": true
+}

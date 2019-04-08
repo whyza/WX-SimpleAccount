@@ -1,0 +1,8 @@
+.popup__content {
+    width: 300rpx;
+    height: 300rpx;
+    line-height: 300rpx;
+    background: #FFFFFF;
+    border-radius: 12rpx;
+    text-align: center;
+  }

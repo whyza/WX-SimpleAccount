@@ -1,0 +1,1 @@
+<button wx:if="{{hasUserInfo && canIUse}}" class='btn' type='primary' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>

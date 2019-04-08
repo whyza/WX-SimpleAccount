@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "example": "../../packages/@minui/wxc-example/dist/index",
+    "example-demo": "../../packages/@minui/wxc-example-demo/dist/index",
+    "example-md": "../../packages/@minui/wxc-example-md/dist/index",
+    "demo-default": "./demos/demo-default",
+    "demo-value": "./demos/demo-value",
+    "demo-count": "./demos/demo-count",
+    "demo-color": "./demos/demo-color",
+    "demo-size": "./demos/demo-size",
+    "demo-readonly": "./demos/demo-readonly"
+  }
+}

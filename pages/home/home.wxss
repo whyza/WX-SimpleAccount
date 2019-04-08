@@ -1,0 +1,90 @@
+.main {
+  height: 100%;
+  /* background-color: #444; */
+}
+
+.img {
+  width: 100%;
+}
+
+.main {
+  height: 100%;
+}
+
+.img {
+  width: 100%;
+}
+
+.fr {
+  float: right;
+}
+
+.add, .sub, .date-time, .date {
+  font-size: 22rpx;
+  color: #666;
+}
+
+.ac-date {
+  position: absolute;
+  top: 56px;
+  left: 10rpx;
+  color: white;
+}
+
+.now-date {
+  position: absolute;
+  top: 87rpx;
+  left: 75rpx;
+  font-size: 60rpx;
+  color: white;
+}
+
+.zhichu {
+  position: absolute;
+  color: white;
+  top: 300rpx;
+  left: 20rpx;
+  font-size: 30rpx;
+}
+
+.shouru {
+  position: absolute;
+  color: white;
+  top: 300rpx;
+  left: 280rpx;
+  font-size: 30rpx;
+}
+
+.list-check {
+  display: flex;
+  align-items: center;
+  z-index: 99999999;
+}
+
+.check {
+  position: absolute;
+  top: 0;
+  left: -2rpx;
+  width: 100%;
+  height: 100%;
+  line-height: 42rpx;
+}
+
+.list-image {
+  width: 102rpx;
+  height: 102rpx;
+  margin-left: 30rpx;
+}
+
+.radius {
+  border-radius: 100px;
+}
+
+.item {
+  flex: 1;
+}
+
+.list-image {
+  width: 102rpx;
+  height: 102rpx;
+}
