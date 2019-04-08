@@ -32,12 +32,6 @@
         "text": "账单"
       },
       {
-        "selectedIconPath": "image/brush_fill.png",
-        "iconPath": "image/brush.png",
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
-      },
-      {
         "selectedIconPath": "image/people_fill.png",
         "iconPath": "image/people.png",
         "pagePath": "pages/my/my",
