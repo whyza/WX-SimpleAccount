@@ -11,7 +11,7 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true,
-    "navigationBarBackgroundColor":"#403D51"
+    "navigationBarBackgroundColor": "#403D51"
   },
   "tabBar": {
     "color": "#80848f",
@@ -30,6 +30,12 @@
         "iconPath": "image/createtask.png",
         "pagePath": "pages/bill/bill",
         "text": "账单"
+      },
+      {
+        "selectedIconPath": "image/brush_fill.png",
+        "iconPath": "image/brush.png",
+        "pagePath": "pages/logs/logs",
+        "text": "预算"
       },
       {
         "selectedIconPath": "image/people_fill.png",
