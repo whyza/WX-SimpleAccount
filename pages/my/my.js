@@ -1,6 +1,5 @@
 var app = getApp();
 const util = require('../../utils/util.js')
-var app = getApp();
 
 Page({
 
@@ -8,14 +7,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo : "",
+    StatusBar: app.globalData.StatusBar,
+    CustomBar: app.globalData.CustomBar,
+    Custom: app.globalData.Custom
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
   },
 
   /**

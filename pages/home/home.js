@@ -1,4 +1,6 @@
 const util = require('../../utils/util.js')
+var app = getApp();
+
 Page({
 
   /**
@@ -6,13 +8,43 @@ Page({
    */
   data: {
     date: "",
-    scrollTop: 0
+    StatusBar: app.globalData.StatusBar,
+    CustomBar: app.globalData.CustomBar,
+    Custom: app.globalData.Custom,
+    showSearch: false,
+    modalName:"",
+    scrollTop:0 ,
+    actions: [
+      {
+        name: '删除',
+        color: '#fff',
+        fontsize: '20',
+        width: 100,
+        icon: 'delete',
+        background: '#ed3f14'
+      },
+      {
+        name: '修改',
+        width: 100,
+        color: '#80848f',
+        fontsize: '20',
+        icon: 'brush'
+      }
+    ]
   },
-  onChange(event) {},
-  //页面滚动执行方式
-  onPageScroll(event) {
+  showModal(e) {
     this.setData({
-      scrollTop: event.scrollTop
+      modalName: e.currentTarget.dataset.target
+    })
+  },
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
+  onPageScroll: function (e) {//监听页面滚动
+    this.setData({
+      scrollTop: e.scrollTop
     })
   },
   /**
@@ -76,5 +108,11 @@ Page({
     this.setData({
       date: e.detail.value
     });
-  }
+  },
+  showSearch() {
+    console.log(123)
+    this.setData({
+      showSearch: !this.data.showSearch
+    });
+  },
 })

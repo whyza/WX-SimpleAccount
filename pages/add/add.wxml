@@ -1,0 +1,48 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action border-custom' open-type="navigateBack" delta="1" hover-class="none" style='width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)'>
+      <text class='icon-back'></text>
+      <text class='icon-homefill'></text>
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>新增账单</view>
+  </view>
+</view>
+<i-tabs current="{{ current }}" bindchange="handleChange">
+  <i-tab key="tab1" title="支出">
+  </i-tab>
+  <i-tab key="tab2" title="收入">
+  </i-tab>
+  <i-tab key="tab3" title="转账"></i-tab>
+</i-tabs>
+
+<view wx:if="{{current == 'tab1'}}">
+  <i-input type="digit" right value="{{ nummber }}" title="金额" autofocus placeholder="0.00" />
+  <i-input disabled right value="请选择分类" title="分类" />
+  <i-input disabled right value="请选择账户" title="账户" />
+  <picker mode="date" style='margin-bottom:35px' start="2015-10-01" end="{{date}}" bindchange="bindDateChange">
+    <i-input disabled right value="{{date}}" title="日期" />
+  </picker>
+  <view class='quick'>
+    <view class='right'>
+      快速选择：
+      <i-tag wx:for="{{tags}}" wx:key="{{index}}" bindchange="onChange" checkable="{{true}}" name="{{index}}" color="{{item.color}}" checked="{{item.checked}}" type="border" style="margin-right:5px;">
+        {{item.name}}
+      </i-tag>
+    </view>
+  </view>
+
+  <view class='address'>
+    <i-input pright="true" placeholder="地址" title="地址">
+    </i-input>
+    <text class='icon-locationfill text-orange addresp'></text>
+  </view>
+  <i-input right placeholder="简要说明本笔账单" title="备注" />
+  <view class='billphoto'>
+    <i-input disabled pright="true" placeholder="上传图片" title="图片">
+    </i-input>
+    <text class='icon-cameraadd text-orange billphotop'></text>
+  </view>
+  <button class='cu-btn block bg-blue margin-tb-sm lg'  type=''>保存</button>
+</view>
+<view wx:if="{{current == 'tab2'}}"> asdassssssssfs</view>
+<view wx:if="{{current == 'tab3'}}"> asdfasdasds</view>

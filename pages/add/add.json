@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../dist/iview/tabs/index",
+    "i-tab": "../../dist/iview/tab/index",
+    "i-tag": "../../dist/iview/tag/index",
+    "i-input": "../../dist/iview/input/index"
+  }
+}

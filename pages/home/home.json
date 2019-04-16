@@ -7,6 +7,9 @@
     "i-sticky": "../../dist/iview/sticky/index",
     "i-sticky-item": "../../dist/iview/sticky-item/index",
     "wxc-list": "../../dist/minui/packages/wxc-list/dist/index",
-    "i-icon": "../../dist/iview/icon/index"
+    "i-icon": "../../dist/iview/icon/index",
+    "i-swipeout": "../../dist/iview/swipeout/index",
+    "i-drawer": "../../dist/iview/drawer/index",
+        "i-button": "../../dist/iview/button/index"
   }
 }

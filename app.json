@@ -4,14 +4,15 @@
     "pages/home/home",
     "pages/bill/bill",
     "pages/my/my",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/add/add"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true,
-    "navigationBarBackgroundColor": "#403D51"
+    "navigationBarBackgroundColor": "#403D51",
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#80848f",

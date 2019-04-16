@@ -1,0 +1,30 @@
+.quick {
+  font-size: 26rpx;
+  color: #ddd;
+  position: relative;
+}
+
+.right {
+  position: absolute;
+  right: 10px;
+  top: -29px;
+}
+
+.address, .billphoto {
+  position: relative;
+}
+.addresp {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.billphotop {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  width: 28px;
+  height: 28px;
+}

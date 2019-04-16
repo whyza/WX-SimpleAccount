@@ -22,7 +22,7 @@
         value="{{ value }}"
         placeholder="{{ placeholder }}"
         maxlength="{{ maxlength }}"
-        class="i-input-input i-cell-bd {{ right ? 'i-input-input-right' : '' }}"
+        class="i-input-input i-cell-bd {{ right ? 'i-input-input-right' : '' }}  {{pright ? 'right40' :''}}"
         placeholder-class="i-input-placeholder"
         bindinput="handleInputChange"
         bindfocus="handleInputFocus"
