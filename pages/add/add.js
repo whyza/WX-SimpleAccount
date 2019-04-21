@@ -1,10 +1,23 @@
 var app = getApp();
+const qiniuUploader = require("../../utils/qiniuUploader");
+var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
+var utilMd5 = require('../../utils/md5.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    billclassfyid: "",
+    billclassfyName: "请选择分类",
+    billclassfyImg: "",
+    // img: "",
+    imagepath: [],
+    getLocation: false,
+    address: "地址",
+    token: '',
+    notupload: true,
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
@@ -51,83 +64,116 @@ Page({
   },
   onChange(event) {
     const detail = event.detail;
-    // if (event.detail.name == "0") {
-    //   this.setData({
-    //     ['tags[0].checked']: detail.checked,
-    //     ['tags[1].checked']: !detail.checked,
-    //     ['tags[2].checked']: !detail.checked
-
-    //   })
-    // } else if (event.detail.name == "1") {
-    //   this.setData({
-    //     ['tags[1].checked']: detail.checked,
-    //     ['tags[0].checked']: !detail.checked,
-    //     ['tags[2].checked']: !detail.checked
-    //   })
-    // } else {
-    //   this.setData({
-    //     ['tags[2].checked']: detail.checked,
-    //     ['tags[0].checked']: !detail.checked,
-    //     ['tags[1].checked']: !detail.checked
-
-    //   })
-    // }
-
+  },
+  choseImage: function() {
+    if (this.data.notupload) {
+      var that = this;
+      wx.chooseImage({
+        count: 3,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+        success(res) {
+          const tempFilePaths = res.tempFilePaths;
+          wx.showLoading({
+            title: '正在上传...',
+            icon: 'loading'
+          })
+          for (var i = 0; i < tempFilePaths.length; i++) {
+            //七牛上传
+            qiniuUploader.upload(tempFilePaths[i], (res) => {
+              that.setData({
+                imagepath: that.data.imagepath.concat(res.fileUrl),
+                notupload: false
+              });
+            }, (error) => {
+              console.log('error: ' + error);
+            }, {
+              region: 'ECN',
+              domain: app.globalData.ImageUrl,
+              uptokenURL: app.globalData.URL + '/getToken',
+            }, (res) => {
+              if (res.progress == "100" && i >= tempFilePaths.length) {
+                setTimeout(function() {
+                  wx.hideLoading();
+                }, 1000);
+              }
+            }, (err) => {
+              // `complete` 上传接受后执行的操作(无论成功还是失败都执行)
+            });
+          }
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '只能上传一张图片',
+        icon: 'error'
+      })
+    }
 
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-
+  removeImage: function() {
+    this.setData({
+      imagepath: [],
+      notupload: true
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
+  handleImagePreview(e) {
+    var idx = e.target.dataset.idx
+    var images = this.data.imagepath
+    wx.previewImage({
+      current: images[idx], //当前图片地址
+      urls: images
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
+  choseBillType: function() {
+    wx.navigateTo({
+      url: '../../pages/billtype/billtype',
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
+  back: function() {
+    wx.navigateBack({
+      delta: 1
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
+  changeSwitch: function(event) {
+    this.setData({
+      getLocation: event.detail.value
+    })
+    if (this.data.getLocation) {
+      var that = this
+      // 实例化腾讯地图API核心类
+      // var qqmapsdk = new QQMapWX({
+      //   key: 'NQABZ-OSSLQ-CLR5M-GTW3K-FH34T-PGFXJ' // 必填
+      // });
+      wx.chooseLocation({
+        success: function(res) {
+          //2、根据坐标获取当前位置名称，显示在顶部:腾讯地图逆地址解析
+          // qqmapsdk.reverseGeocoder({
+          //   location: {
+          //     latitude: res.latitude,
+          //     longitude: res.longitude
+          //   },
+          //   success: function (addressRes) {
+          //     var address = addressRes.result.formatted_addresses.recommend;
+          //     that.setData({
+          //       address:address
+          //     })
+          //   }
+          // })
+          that.setData({
+            address: res.address
+          })
+        },
+        cancel: function() {
+          that.setData({
+            getLocation: false
+          })
+        }
+      })
+    } else {
+      this.setData({
+        address: "地址"
+      })
+    }
   }
 })

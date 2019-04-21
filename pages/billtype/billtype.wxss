@@ -1,0 +1,39 @@
+.headertitle {
+  height: 30px;
+  font-size: 30rpx;
+  line-height: 54rpx;
+  padding-left: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2% 1% 1% 1%;
+}
+
+.typeImage {
+  width: 45px;
+  height: 45px;
+  display: block;
+  position: relative;
+  font-size: 48rpx;
+  margin: 0 auto;
+}
+
+.item {
+  width: 20%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.item .typetext {
+  display: block;
+  color: #888;
+  margin-top: 10rpx;
+  line-height: 40rpx;
+  font-size: 21rpx;
+}
+.shadowb{
+  box-shadow: 1px 1rpx 4rpx rgba(0, 0, 0, 0.1);
+}

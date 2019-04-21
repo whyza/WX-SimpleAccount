@@ -13,9 +13,9 @@
       </view>
     </view>
   </view>
-  <view class="{{scrollTop>180-64 ? 'topnavFixed' : ''}}">
+  <view class="topnavFixed">
     <view class='tm-zhichu'>本月支出(元)</view>
-    <view class="{{scrollTop>180-64 ? 'monyfiex' : 'money'}}">22.00</view>
+    <view class="{{scrollTop>36 ? 'monyfiex' : 'money'}}">22.00</view>
     <i-icon class='ac-date' type="activity" size="32" />
     <picker class='now-date' mode="date" :value="date" start="2015-09-01" end="{{date}}" bindchange='dateChange '>
       <view class='border-picker'>
@@ -48,35 +48,7 @@
             收入88.00
           </view>
         </view>
-        <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
-          <view slot="content">
-            <view class='bill-container solid-bottom'>
-              <image class="billtype-image" src='../../image/user_bg.png'></image>
-              <view class='billtype'>
-                餐饮
-              </view>
-              <view class='bill-content'>额大苏打</view>
-              <view class='bill-money text-green'>88.00
-                <text class='icon-right lg text-grey' style='font-size:20px;'></text>
-              </view>
-            </view>
-          </view>
-        </i-swipeout>
-        <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
-          <view slot="content">
-            <view class='bill-container solid-bottom'>
-              <image class="billtype-image" src='../../image/user_bg.png'></image>
-              <view class='billtype'>
-                餐饮
-              </view>
-              <view class='bill-content'>额大苏打</view>
-              <view class='bill-money text-green'>88.00
-                <text class='icon-right lg text-grey' style='font-size:20px;'></text>
-              </view>
-            </view>
-          </view>
-        </i-swipeout>
-        <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}">
           <view slot="content">
             <view class='bill-container solid-bottom'>
               <image class="billtype-image" src='../../image/user_bg.png'></image>
@@ -89,8 +61,30 @@
               </view>
             </view>
           </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button lbutton" data-billid='8' bindtap='deletetap'>
+              <i-icon type="delete" />删除</view>
+          </view>
         </i-swipeout>
-        <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}">
+          <view slot="content">
+            <view class='bill-container solid-bottom'>
+              <image class="billtype-image" src='../../image/user_bg.png'></image>
+              <view class='billtype'>
+                餐饮
+              </view>
+              <view class='bill-content'>额大苏打</view>
+              <view class='bill-money text-green'>88.00
+                <text class='icon-right lg text-grey' style='font-size:20px;'></text>
+              </view>
+            </view>
+          </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button lbutton" data-billid='8' bindtap='deletetap'>
+              <i-icon type="delete" />删除</view>
+          </view>
+        </i-swipeout>
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}">
           <view slot="content">
             <view class='bill-container solid-bottom'>
               <image class="billtype-image" src='../../image/user_bg.png'></image>
@@ -102,6 +96,64 @@
                 <text class='icon-right lg text-grey' style='font-size:20px;'></text>
               </view>
             </view>
+          </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button lbutton" data-billid='8' bindtap='deletetap'>
+              <i-icon type="delete" />删除</view>
+          </view>
+        </i-swipeout>
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}">
+          <view slot="content">
+            <view class='bill-container solid-bottom'>
+              <image class="billtype-image" src='../../image/user_bg.png'></image>
+              <view class='billtype'>
+                餐饮
+              </view>
+              <view class='bill-content'>额大苏打</view>
+              <view class='bill-money text-green'>88.00
+                <text class='icon-right lg text-grey' style='font-size:20px;'></text>
+              </view>
+            </view>
+          </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button lbutton" data-billid='8' bindtap='deletetap'>
+              <i-icon type="delete" />删除</view>
+          </view>
+        </i-swipeout>
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}">
+          <view slot="content">
+            <view class='bill-container solid-bottom'>
+              <image class="billtype-image" src='../../image/user_bg.png'></image>
+              <view class='billtype'>
+                餐饮
+              </view>
+              <view class='bill-content'>额大苏打</view>
+              <view class='bill-money text-orange'>88.00
+                <text class='icon-right lg text-grey' style='font-size:20px;'></text>
+              </view>
+            </view>
+          </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button lbutton" data-billid='8' bindtap='deletetap'>
+              <i-icon type="delete" />删除</view>
+          </view>
+        </i-swipeout>
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}">
+          <view slot="content">
+            <view class='bill-container solid-bottom'>
+              <image class="billtype-image" src='../../image/user_bg.png'></image>
+              <view class='billtype'>
+                餐饮
+              </view>
+              <view class='bill-content'>额大苏打</view>
+              <view class='bill-money text-orange'>88.00
+                <text class='icon-right lg text-grey' style='font-size:20px;'></text>
+              </view>
+            </view>
+          </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button lbutton" data-billid='8' bindtap='deletetap'>
+              <i-icon type="delete" />删除</view>
           </view>
         </i-swipeout>
       </view>
@@ -117,7 +169,7 @@
             收入88.00
           </view>
         </view>
-        <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}">
           <view slot="content">
             <view class='bill-container solid-bottom'>
               <image class="billtype-image" src='../../image/user_bg.png'></image>
@@ -130,8 +182,30 @@
               </view>
             </view>
           </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button lbutton" data-billid='8' bindtap='deletetap'>
+              <i-icon type="delete" />删除</view>
+          </view>
         </i-swipeout>
-        <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}">
+          <view slot="content">
+            <view class='bill-container solid-bottom'>
+              <image class="billtype-image" src='../../image/user_bg.png'></image>
+              <view class='billtype'>
+                餐饮
+              </view>
+              <view class='bill-content'>额大苏打</view>
+              <view class='bill-money text-green'>88.00
+                <text class='icon-right lg text-grey' style='font-size:20px;'></text>
+              </view>
+            </view>
+          </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button lbutton" data-billid='8' bindtap='deletetap'>
+              <i-icon type="delete" />删除</view>
+          </view>
+        </i-swipeout>
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}">
           <view slot="content">
             <view class='bill-container solid-bottom'>
               <image class="billtype-image" src='../../image/user_bg.png'></image>
@@ -144,8 +218,12 @@
               </view>
             </view>
           </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button lbutton" data-billid='8' bindtap='deletetap'>
+              <i-icon type="delete" />删除</view>
+          </view>
         </i-swipeout>
-        <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}">
           <view slot="content">
             <view class='bill-container solid-bottom'>
               <image class="billtype-image" src='../../image/user_bg.png'></image>
@@ -158,8 +236,12 @@
               </view>
             </view>
           </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button lbutton" data-billid='8' bindtap='deletetap'>
+              <i-icon type="delete" />删除</view>
+          </view>
         </i-swipeout>
-        <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}">
           <view slot="content">
             <view class='bill-container solid-bottom'>
               <image class="billtype-image" src='../../image/user_bg.png'></image>
@@ -172,19 +254,9 @@
               </view>
             </view>
           </view>
-        </i-swipeout>
-        <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
-          <view slot="content">
-            <view class='bill-container solid-bottom'>
-              <image class="billtype-image" src='../../image/user_bg.png'></image>
-              <view class='billtype'>
-                餐饮
-              </view>
-              <view class='bill-content'>额大苏打</view>
-              <view class='bill-money text-green'>88.00
-                <text class='icon-right lg text-grey' style='font-size:20px;'></text>
-              </view>
-            </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button lbutton" data-billid='8' bindtap='deletetap'>
+              <i-icon type="delete" />删除</view>
           </view>
         </i-swipeout>
       </view>
@@ -251,4 +323,9 @@
   </view>
 
 </view>
+
+<i-modal title="删除确认" visible="{{ deletevisable }}" actions="{{ delectaction }}" bind:click="deleteclick">
+  <view>删除后无法恢复哦</view>
+</i-modal>
+<i-message id="message" />
 <custom-tabbar></custom-tabbar>

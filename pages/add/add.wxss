@@ -8,17 +8,17 @@
   position: absolute;
   right: 10px;
   top: -29px;
+
 }
 
 .address, .billphoto {
   position: relative;
 }
+
 .addresp {
   position: absolute;
-  right: 10px;
-  top: 18px;
-  width: 28px;
-  height: 28px;
+  right: 16px;
+  top: 12px;
 }
 
 .billphotop {
@@ -27,4 +27,37 @@
   top: 18px;
   width: 28px;
   height: 28px;
+}
+
+.billimage {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.closebg {
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.close {
+  z-index: 9999999;
+}
+
+.billclassfy {
+  position: relative;
+}
+
+.billclassfyImg {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 15px;
+  right: 75px;
 }

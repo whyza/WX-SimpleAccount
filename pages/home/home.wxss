@@ -48,11 +48,11 @@
 }
 
 .money {
-  font-size: 26px;
-  font-weight: 500px;
+  font-size: 38px;
+  font-weight: 800px;
   position: absolute;
-  top: 46px;
-  left: 10px;
+  top: 55px;
+  left: 16px;
   color: white;
   transition: all 0.5s;
 }
@@ -70,7 +70,7 @@
   position: absolute;
   color: white;
   font-size: 14px;
-  top: 105px;
+  top: 110px;
   left: 10px;
 }
 
@@ -78,15 +78,15 @@
   font-size: 14px;
   font-weight: 300px;
   position: absolute;
-  top: 107px;
+  top: 113px;
   left: 72px;
   color: white;
 }
 
 .tm-yuer {
   position: absolute;
-  top: 105px;
-  right: 112px;
+  top: 110px;
+  right: 104px;
   font-size: 14px;
   color: white;
 }
@@ -95,8 +95,8 @@
   font-size: 14px;
   font-weight: 300px;
   position: absolute;
-  top: 107px;
-  right: 70px;
+  top: 113px;
+  right: 65px;
   color: white;
 }
 
@@ -230,8 +230,8 @@
 .water {
   position: absolute;
   left: 0;
-  bottom: -10px;
-  height: 30px;
+  bottom: -1px;
+  height: 25px;
   width: 100%;
   z-index: 1;
 }
@@ -308,5 +308,21 @@
 }
 
 .billstop {
-  margin-top: 33px;
+  margin-top: 36px;
+}
+
+.lbutton {
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 70px;
+  float: left;
+  color: white;
+}
+.lbutton{
+  background: #ed3f14;
+
 }

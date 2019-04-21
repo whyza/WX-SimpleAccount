@@ -1,5 +1,6 @@
 const util = require('../../utils/util.js')
 var app = getApp();
+const { $Message } = require('../../dist/iview/base/index');
 
 Page({
 
@@ -8,27 +9,22 @@ Page({
    */
   data: {
     date: "",
+    billId:"",
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
     showSearch: false,
     modalName:"",
     scrollTop:0 ,
-    actions: [
+    deletevisable:false,
+    delectaction: [
       {
-        name: '删除',
-        color: '#fff',
-        fontsize: '20',
-        width: 100,
-        icon: 'delete',
-        background: '#ed3f14'
+        name: '取消'
       },
       {
-        name: '修改',
-        width: 100,
-        color: '#80848f',
-        fontsize: '20',
-        icon: 'brush'
+        name: '删除',
+        color: '#ed3f14',
+        loading: false
       }
     ]
   },
@@ -62,47 +58,35 @@ Page({
   onReady: function() {
    
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
+  deletetap:function(e){
+    this.setData({
+      deletevisable: true,
+      billId: e.currentTarget.dataset.billid
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
+  deleteclick({ detail}) {
+    if (detail.index === 0) {
+      this.setData({
+        deletevisable: false
+      });
+    } else {
+      const action = [...this.data.delectaction];
+      action[1].loading = true;
+      this.setData({
+        delectaction: action
+      });
+      setTimeout(() => {
+        action[1].loading = false;
+        this.setData({
+          deletevisable: false,
+          delectaction: action
+        });
+        $Message({
+          content: '删除成功！'+this.data.billId,
+          type: 'success'
+        });
+      }, 2000);
+    }
   },
   dateChange: function(e) {
     this.setData({
@@ -110,7 +94,6 @@ Page({
     });
   },
   showSearch() {
-    console.log(123)
     this.setData({
       showSearch: !this.data.showSearch
     });

@@ -2,6 +2,8 @@
   "usingComponents": {
     "i-cell-group": "../../dist/iview/cell-group/index",
     "i-cell": "../../dist/iview/cell/index",
-    "i-card": "../../dist/iview/card/index"
+    "i-card": "../../dist/iview/card/index",
+    "i-message": "../../dist/iview/message/index",
+    "i-button": "../../dist/iview/button/index"
   }
 }

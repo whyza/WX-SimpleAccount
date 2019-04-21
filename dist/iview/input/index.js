@@ -36,6 +36,10 @@ Component({
       type: Boolean,
       value: false
     },
+    pright2:{
+      type: Boolean,
+      value: false
+    },
     error: {
       type: Boolean,
       value: false

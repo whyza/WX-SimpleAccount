@@ -1,9 +1,8 @@
 <view class="cu-custom" style="height:{{CustomBar}}px;">
   <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
-    <navigator class='action border-custom' open-type="navigateBack" delta="1" hover-class="none" style='width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)'>
-      <text class='icon-back'></text>
-      <text class='icon-homefill'></text>
-    </navigator>
+    <view class='action' bindtap='back'>
+      <text class='icon-back' bindtap='back'></text> 返回
+    </view>
     <view class='content' style='top:{{StatusBar}}px;'>新增账单</view>
   </view>
 </view>
@@ -17,7 +16,10 @@
 
 <view wx:if="{{current == 'tab1'}}">
   <i-input type="digit" right value="{{ nummber }}" title="金额" autofocus placeholder="0.00" />
-  <i-input disabled right value="请选择分类" title="分类" />
+  <view class='billclassfy'>
+    <i-input disabled right  value="{{billclassfyName}}" title="分类" bindtap='choseBillType' />
+    <image class='billclassfyImg' src='{{billclassfyImg}}'></image>
+  </view>
   <i-input disabled right value="请选择账户" title="账户" />
   <picker mode="date" style='margin-bottom:35px' start="2015-10-01" end="{{date}}" bindchange="bindDateChange">
     <i-input disabled right value="{{date}}" title="日期" />
@@ -32,17 +34,24 @@
   </view>
 
   <view class='address'>
-    <i-input pright="true" placeholder="地址" title="地址">
+    <i-input pright2 placeholder="{{address}}" title="地址">
     </i-input>
-    <text class='icon-locationfill text-orange addresp'></text>
+    <i-switch class='addresp' value="{{getLocation}}" bind:change="changeSwitch" slot="footer"></i-switch>
+    <!-- <text class='icon-locationfill text-orange addresp'></text> -->
   </view>
   <i-input right placeholder="简要说明本笔账单" title="备注" />
   <view class='billphoto'>
-    <i-input disabled pright="true" placeholder="上传图片" title="图片">
-    </i-input>
-    <text class='icon-cameraadd text-orange billphotop'></text>
+    <view class='billphoto' bindtap='choseImage'>
+      <i-input disabled pright placeholder="上传图片" title="图片">
+      </i-input>
+      <text class='icon-cameraadd text-orange billphotop'></text>
+    </view>
   </view>
-  <button class='cu-btn block bg-blue margin-tb-sm lg'  type=''>保存</button>
+  <image wx:for="{{imagepath}}" wx:for-index="index" wx:for-item="item" wx:if="{{!notupload}}" wx:key="index" data-idx='{{index}}' src='{{item}}' bindtap='handleImagePreview' class='billimage'>
+  </image>
+
+
+  <button class='cu-btn block bg-blue margin-tb-sm lg' type=''>保存</button>
 </view>
 <view wx:if="{{current == 'tab2'}}"> asdassssssssfs</view>
 <view wx:if="{{current == 'tab3'}}"> asdfasdasds</view>

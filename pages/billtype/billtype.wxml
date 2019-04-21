@@ -1,0 +1,28 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action border-custom' open-type="navigateBack" delta="1" hover-class="none" style='width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)'>
+      <text class='icon-back'></text>
+      <text class='icon-homefill' bindtap='back'></text>
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>选择分类</view>
+  </view>
+</view>
+
+
+
+<view class='type'>
+  <view class='billtype  bg-white' wx:for="{{billClassfy}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+    <view class='headertitle shadowb'>
+      {{item.classfyName}}
+    </view>
+    <view class='container'>
+      <view class='item' bindtap='navigator' wx:for="{{item.childrenBillClassfy}}" wx:key="index" wx:for-index="index"  wx:for-item="item" data-billClassfyId="{{item.classfyId}}" data-img='{{item.classifyImage}}' data-name='{{item.classfyName}}'>
+        <image class="typeImage" src='{{item.classifyImage}}'></image>
+        <text class='typetext'>{{item.classfyName}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='addtype'>
+
+  </view>
+</view>

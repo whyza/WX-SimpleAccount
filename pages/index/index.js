@@ -1,10 +1,12 @@
 let app = getApp()
+var http = require('../../utils/request.js')
+
 Page({
   data: {
     userInfo: {},
     hasUserInfo: false, //未授权不显示
     canIUse: wx.canIUse('button.open-type.getUserInfo'), //判断小程序的API，回调，参数，组件等是否在当前版本可用。
-    globalData:app.globalData.current
+    globalData: app.globalData.current
   },
   onLoad(option) {
 
@@ -17,8 +19,7 @@ Page({
       success: res => {
         //用户已授权
         if (res.authSetting['scope.userInfo']) {
-          this.queryUsreInfo(wx.getStorageSync("openId"))
-          
+          this.queryUsreInfo(wx.getStorageSync("openId") || {})
         } else {
           // 用户没有授权
           // 改变 hasUserInfo 的值，显示授权页面
@@ -41,17 +42,12 @@ Page({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           userInfo.code = res.code;
-          wx.request({
-            url: 'http://192.168.199.211:8080/userLoginByWeChat',
-            data: userInfo,
-            method: 'POST',
-            success: function (res) {
-              wx.setStorageSync("openId", res.data.data.open_id);
-              app.globalData.userInfo = userInfo
-              wx.switchTab({
-                url: "../../pages/home/home"
-              })  
-            }
+          http.HttpRequst("POST", "userLoginByWeChat", userInfo, true, 0, function(res) {
+            wx.setStorageSync("openId", res.data.data.open_id);
+            app.globalData.userInfo = userInfo
+            wx.switchTab({
+              url: "../../pages/home/home"
+            })
           })
         }
       })
@@ -71,52 +67,15 @@ Page({
       });
     }
   },
-  queryUsreInfo:function(openId){
-    wx.request({
-      url: 'http://192.168.199.211:8080/queryUserInfoByOpenId',
-      data: {
-        openId: openId
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      method: 'POST',
-      success: function (res) {
-        app.globalData.userInfo = res.data.data
-        
-      }
-    })
-    wx.switchTab({
-      url: "../../pages/home/home"
-    })
-  },
-  // ListTouch触摸开始
-  ListTouchStart(e) {
-    this.setData({
-      ListTouchStart: e.touches[0].pageX
-    })
-  },
-
-  // ListTouch计算方向
-  ListTouchMove(e) {
-    this.setData({
-      ListTouchDirection: e.touches[0].pageX - this.data.ListTouchStart > 0 ? 'right' : 'left'
-    })
-  },
-
-  // ListTouch计算滚动
-  ListTouchEnd(e) {
-    if (this.data.ListTouchDirection == 'left') {
-      this.setData({
-        modalName: e.currentTarget.dataset.target
+  queryUsreInfo: function(openId) {
+    var url = "queryUserInfoByOpenId";
+    http.HttpRequst("POST", url, {
+      openId
+    }, true, 1, function(res) {
+      app.globalData.userInfo = res.data.data;
+      wx.switchTab({
+        url: "../../pages/home/home"
       })
-    } else {
-      this.setData({
-        modalName: null
-      })
-    }
-    this.setData({
-      ListTouchDirection: null
     })
   }
 })

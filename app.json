@@ -5,7 +5,8 @@
     "pages/bill/bill",
     "pages/my/my",
     "pages/logs/logs",
-    "pages/add/add"
+    "pages/add/add",
+    "pages/billtype/billtype"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -45,5 +46,10 @@
         "text": "我的"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   }
 }

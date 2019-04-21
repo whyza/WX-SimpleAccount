@@ -1,15 +1,10 @@
 {
   "usingComponents": {
     "custom-tabbar": "/components/custom-tabbar/custom-tabbar",
-    "i-collapse": "../../dist/iview/collapse/index",
-    "i-collapse-item": "../../dist/iview/collapse-item/index",
-    "wxc-toast": "../../dist/minui/packages/wxc-toast/dist/index",
-    "i-sticky": "../../dist/iview/sticky/index",
-    "i-sticky-item": "../../dist/iview/sticky-item/index",
-    "wxc-list": "../../dist/minui/packages/wxc-list/dist/index",
     "i-icon": "../../dist/iview/icon/index",
     "i-swipeout": "../../dist/iview/swipeout/index",
-    "i-drawer": "../../dist/iview/drawer/index",
-        "i-button": "../../dist/iview/button/index"
+    "i-button": "../../dist/iview/button/index",
+    "i-modal": "../../dist/iview/modal/index",
+    "i-message": "../../dist/iview/message/index"
   }
 }
