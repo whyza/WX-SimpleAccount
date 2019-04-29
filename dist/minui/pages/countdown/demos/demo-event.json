@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-countdown": "../../../packages/wxc-countdown/dist/index"
-  },
-  "component": true
-}

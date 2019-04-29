@@ -1,5 +1,5 @@
 const util = require('../../utils/util.js')
-var app = getApp();
+let app = getApp();
 
 Page({
 

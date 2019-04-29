@@ -1,4 +1,0 @@
-<button bindtap="showDialog">标题+内容+额外内容+确认按钮</button>
-<wxc-dialog class="wxc-dialog" title="弹窗" content="这里可能是说明文字" confirm-text="主按钮" bindconfirm="onConfirm" bindcancel="onCancel" _pid="{{_pid}}">
-    <input class="input" placeholder="自定义的额外内容"></input>
-</wxc-dialog>

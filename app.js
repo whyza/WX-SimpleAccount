@@ -15,6 +15,12 @@ App({
   },
 
   globalData: {
+    multiArray:"",
+    multiIndex: [0, 0],
+    accarray:"",
+    accoenarray:"",
+    acctwoarray:"",
+    classifyType:0,
     uid: "",
     hasUserInfo: false,
     code: 1,

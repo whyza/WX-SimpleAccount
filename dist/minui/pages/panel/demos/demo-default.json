@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-panel": "../../../packages/wxc-panel/dist/index"
-  },
-  "component": true
-}

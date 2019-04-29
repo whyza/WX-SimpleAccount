@@ -1,5 +1,0 @@
-<view class="search-wrap">
-    <view class="search-location">浙江</view>
-    <wxc-search class="search" radius="30" mode="static" placeholder="iphoneX" _pid="{{_pid}}"></wxc-search>
-    <wxc-icon class="search-icon" type="message" size="44" color="#fff" _pid="{{_pid}}"></wxc-icon>
-</view>

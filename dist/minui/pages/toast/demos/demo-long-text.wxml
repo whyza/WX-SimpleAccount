@@ -1,2 +1,0 @@
-<wxc-toast is-show="{{$toast.show}}" text="当文案比较多需要换行的时候那就需要换行" _pid="{{_pid}}"></wxc-toast>
-<button bindtap="showToast">一个长文案 toast</button>

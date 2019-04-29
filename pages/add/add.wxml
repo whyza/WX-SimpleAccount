@@ -1,7 +1,7 @@
 <view class="cu-custom" style="height:{{CustomBar}}px;">
   <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
     <view class='action' bindtap='back'>
-      <text class='icon-back' bindtap='back'></text> 返回
+      <text class='cuIcon-back' bindtap='back'></text> 返回
     </view>
     <view class='content' style='top:{{StatusBar}}px;'>新增账单</view>
   </view>
@@ -15,12 +15,14 @@
 </i-tabs>
 
 <view wx:if="{{current == 'tab1'}}">
-  <i-input type="digit" right value="{{ nummber }}" title="金额" autofocus placeholder="0.00" />
+  <i-input type="digit" right pred title="金额" maxlength="11" autofocus placeholder="{{ nummber }}" bindchange="bindInput" />
   <view class='billclassfy'>
-    <i-input disabled right  value="{{billclassfyName}}" title="分类" bindtap='choseBillType' />
+    <i-input disabled right value="{{billclassfyName}}" title="分类" bindtap='choseBillType' />
     <image class='billclassfyImg' src='{{billclassfyImg}}'></image>
   </view>
-  <i-input disabled right value="请选择账户" title="账户" />
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <i-input disabled right value="{{multiArray[1][multiIndex[1]] || '支付宝'}}" title="账户" />
+  </picker>
   <picker mode="date" style='margin-bottom:35px' start="2015-10-01" end="{{date}}" bindchange="bindDateChange">
     <i-input disabled right value="{{date}}" title="日期" />
   </picker>
@@ -34,24 +36,84 @@
   </view>
 
   <view class='address'>
-    <i-input pright2 placeholder="{{address}}" title="地址">
+    <i-input pright2 placeholder="地址" value='{{address}}' title="地址">
     </i-input>
     <i-switch class='addresp' value="{{getLocation}}" bind:change="changeSwitch" slot="footer"></i-switch>
     <!-- <text class='icon-locationfill text-orange addresp'></text> -->
   </view>
-  <i-input right placeholder="简要说明本笔账单" title="备注" />
-  <view class='billphoto'>
-    <view class='billphoto' bindtap='choseImage'>
-      <i-input disabled pright placeholder="上传图片" title="图片">
-      </i-input>
-      <text class='icon-cameraadd text-orange billphotop'></text>
+  <i-input right placeholder="简要说明本笔账单" title="备注" value='{{remarks}}' bindchange="bindInputRemark" />
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      图片上传
+    </view>
+    <view class="action">
+      {{imagepath.length}}/4
     </view>
   </view>
-  <image wx:for="{{imagepath}}" wx:for-index="index" wx:for-item="item" wx:if="{{!notupload}}" wx:key="index" data-idx='{{index}}' src='{{item}}' bindtap='handleImagePreview' class='billimage'>
-  </image>
-
-
-  <button class='cu-btn block bg-blue margin-tb-sm lg' type=''>保存</button>
+  <view class="cu-form-group">
+    <view class="grid col-4 grid-square flex-sub">
+      <view class="bg-img" wx:for="{{imagepath}}" wx:key="{{index}}" data-url="{{imagepath[index]}}">
+        <image class='billimage' src='{{imagepath[index]}}' bindtap="handleImagePreview" data-idx="{{index}}" mode='aspectFill'></image>
+        <view class="cu-tag bg-red" catchtap="DelImg" data-idx="{{index}}">
+          <text class="cuIcon-close"></text>
+        </view>
+      </view>
+      <view class="solids" bindtap="choseImage" wx:if="{{imagepath.length<4}}">
+        <text class="cuIcon-cameraadd"></text>
+      </view>
+    </view>
+  </view>
+  <button class='cu-btn block bg-red margin-tb-sm lg' type='' data-accountType="0" bindtap='addbill'>保存</button>
 </view>
-<view wx:if="{{current == 'tab2'}}"> asdassssssssfs</view>
+<view wx:if="{{current == 'tab2'}}">
+  <i-input type="digit" right  pgreen title="金额" maxlength="11" autofocus placeholder="{{ nummber }}" bindchange="bindInput" />
+  <view class='billclassfy'>
+    <i-input disabled right value="{{billclassfyName}}" title="分类" bindtap='choseBillType' />
+    <image class='billclassfyImg' wx:if="{{billclassfyImg}}" src='{{billclassfyImg}}'></image>
+  </view>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <i-input disabled right value="{{multiArray[1][multiIndex[1]]}}" title="账户" />
+  </picker>
+  <picker mode="date" style='margin-bottom:35px' start="2015-10-01" end="{{date}}" bindchange="bindDateChange">
+    <i-input disabled right value="{{date}}" title="日期" />
+  </picker>
+  <view class='quick'>
+    <view class='right'>
+      快速选择：
+      <i-tag wx:for="{{tags}}" wx:key="{{index}}" bindchange="onChange" checkable="{{true}}" name="{{index}}" color="{{item.color}}" checked="{{item.checked}}" type="border" style="margin-right:5px;">
+        {{item.name}}
+      </i-tag>
+    </view>
+  </view>
+
+  <view class='address'>
+    <i-input pright2 placeholder="地址" value='{{address}}' title="地址">
+    </i-input>
+    <i-switch class='addresp' value="{{getLocation}}" bind:change="changeSwitch" slot="footer"></i-switch>
+    <!-- <text class='icon-locationfill text-orange addresp'></text> -->
+  </view>
+  <i-input right placeholder="简要说明本笔账单" title="备注" value='{{remarks}}' bindchange="bindInputRemark" />
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      图片上传
+    </view>
+    <view class="action">
+      {{imagepath.length}}/4
+    </view>
+  </view>
+  <view class="cu-form-group">
+    <view class="grid col-4 grid-square flex-sub">
+      <view class="bg-img" wx:for="{{imagepath}}" wx:key="{{index}}" data-url="{{imagepath[index]}}">
+        <image class='billimage' src='{{imagepath[index]}}' bindtap="handleImagePreview" data-idx="{{index}}" mode='aspectFill'></image>
+        <view class="cu-tag bg-red" catchtap="DelImg" data-idx="{{index}}">
+          <text class="cuIcon-close"></text>
+        </view>
+      </view>
+      <view class="solids" bindtap="choseImage" wx:if="{{imagepath.length<4}}">
+        <text class="cuIcon-cameraadd"></text>
+      </view>
+    </view>
+  </view>
+  <button class='cu-btn block bg-blue margin-tb-sm lg' type='' data-accountType="1" bindtap='addbill'>保存</button>
+</view>
 <view wx:if="{{current == 'tab3'}}"> asdfasdasds</view>

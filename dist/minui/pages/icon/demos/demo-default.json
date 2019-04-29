@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-icon": "../../../packages/wxc-icon/dist/index"
-  },
-  "component": true
-}

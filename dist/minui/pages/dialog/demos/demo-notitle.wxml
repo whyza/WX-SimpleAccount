@@ -1,2 +1,0 @@
-<button bindtap="showDialog">黑色内容+确认按钮</button>
-<wxc-dialog class="wxc-dialog" content-color="#353535" content="告知当前状态，信息和解决方案，文字换行的情况。" confirm-text="知道了" bindconfirm="onConfirm" bindcancel="onCancel" _pid="{{_pid}}"></wxc-dialog>

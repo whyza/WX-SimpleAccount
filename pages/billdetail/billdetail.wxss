@@ -1,0 +1,51 @@
+.head {
+  min-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headiamge {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.money {
+  font-size: 30px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.billd {
+  height: 65px;
+  padding: 15px;
+}
+
+.billsame {
+  font-size: 16px;
+  line-height: 35px;
+}
+
+.w100 {
+  width: 170px;
+  margin: 10px 0 20px 0;
+}
+
+.ml {
+  margin-left: 10px;
+}
+
+.mr {
+  margin-right: 10px;
+}
+
+.address,.bzhu {
+  line-height: 35px;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+  width: 275px;
+}

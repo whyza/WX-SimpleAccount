@@ -107,9 +107,9 @@
 .i-input-input {
   flex: 1;
   line-height: 1.6;
-  padding: 4px 0;
   min-height: 22px;
   height: auto;
+  padding: 4px 0;
   font-size: 30rpx;
 }
 
@@ -128,7 +128,7 @@
 
 .right50 {
   text-align: right;
-  margin-right:104rpx;
+  margin-right: 104rpx;
 }
 
 .i-input.i-input-wrapped::after {
@@ -137,4 +137,24 @@
 
 .i-input-wrapped.i-input-error::after {
   border-color: #ed3f14;
+}
+
+.pred {
+  font-size: 28px;
+  font-weight: 400;
+  color: #f43f3b;
+  flex: 1;
+  line-height: 1.8;
+  min-height: 22px;
+  height: 37px;
+}
+
+.pgreen{
+  font-size: 28px;
+  font-weight: 400;
+  color: #39b54a;
+  flex: 1;
+  line-height: 1.8;
+  min-height: 22px;
+  height: 37px;
 }

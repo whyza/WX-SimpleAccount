@@ -1,5 +1,0 @@
-<wxc-mask status="{{maskStatus}}" _pid="{{_pid}}">
-    <view class="mask-demo_content">我是一个子节点内的文字</view>
-</wxc-mask>
-
-<button bindtap="showMask">设置子节点</button>

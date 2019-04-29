@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-flex": "../../../packages/wxc-flex/dist/index"
-  },
-  "component": true
-}

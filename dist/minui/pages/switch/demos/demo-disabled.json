@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-switch": "../../../packages/wxc-switch/dist/index"
-  },
-  "component": true
-}

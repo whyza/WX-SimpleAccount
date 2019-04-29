@@ -7,7 +7,7 @@ page{
 .cu-modal.show {
   z-index: 99999;
 }
-
+/* 
 .nav-list {
   display: flex;
   flex-wrap: wrap;
@@ -135,4 +135,4 @@ page{
   100% {
     transform: translateY(0px);
   }
-}
+} */

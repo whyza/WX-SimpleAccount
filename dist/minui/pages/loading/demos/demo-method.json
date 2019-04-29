@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-loading": "../../../packages/wxc-loading/dist/index"
-  },
-  "component": true
-}

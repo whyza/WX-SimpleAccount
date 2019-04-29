@@ -1,3 +1,0 @@
-<wxc-panel margin="{{false}}" _pid="{{_pid}}">
-    <view class="content">无上边距模式</view>
-</wxc-panel>

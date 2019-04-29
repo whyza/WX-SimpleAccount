@@ -1,6 +1,6 @@
 const util = require('../../utils/util.js')
-var app = getApp();
-const { $Message } = require('../../dist/iview/base/index');
+const app = getApp();
+const http = require('../../utils/request.js')
 
 Page({
 
@@ -8,17 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    date: "",
-    billId:"",
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
-    showSearch: false,
-    modalName:"",
-    scrollTop:0 ,
-    deletevisable:false,
-    delectaction: [
-      {
+    delectaction: [{
         name: '取消'
       },
       {
@@ -27,6 +20,48 @@ Page({
         loading: false
       }
     ]
+  },
+  onShow: function() {
+    let that = this;
+    that.setData({
+      date: util.formatDate(new Date())
+    })
+    if (that.data.bill == null || that.data.bill == null == "") {
+      that.selectBillByDateAndUid();
+    }
+  },
+  selectBillByDateAndUid: function() {
+    let url = "selectBillByDateAndUid";
+    let that = this;
+    http.HttpRequst("GET", url, {
+      year: "2019",
+      month: "04",
+      userId: app.globalData.userInfo.userId
+    }, false, 1, function(res) {
+      that.setData({
+        bill:res.data
+      })
+      that.setpayincome(res);
+    })
+  },
+  setpayincome:function(res){
+    var income = 0;
+    var pay = 0;
+    var payincome = [];
+    for (var index in res.data) {
+      for (var item in res.data[index].dateBills) {
+        if (res.data[index].dateBills[item].accountTypeId == 1) {
+          income += res.data[index].dateBills[item].billMoney;
+        } else {
+          pay += res.data[index].dateBills[item].billMoney;
+        }
+      }
+      payincome.push([income, pay]);
+      income = pay = 0;
+    }
+    this.setData({
+      payincome: payincome
+    })
   },
   showModal(e) {
     this.setData({
@@ -38,55 +73,35 @@ Page({
       modalName: null
     })
   },
-  onPageScroll: function (e) {//监听页面滚动
+  onPageScroll: function(e) { //监听页面滚动
     this.setData({
       scrollTop: e.scrollTop
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-    this.setData({
-      date: util.formatDate(new Date())
+  deletetap: function(e) {
+  let that = this;
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除该账单吗?',
+      success: function (res) {
+        if (res.confirm) {
+          http.HttpRequst("GET", "deleteBillById", {
+            billId: e.currentTarget.dataset.billid
+          }, false, 0, function (res) {
+            if (!res.data.data) {
+              wx.showToast({
+                title: res.data.message,
+                icon: 'warn',
+                // duration: 1000,
+                mask: true
+              })
+            }else{
+              that.selectBillByDateAndUid();
+            }
+          })
+        }
+      }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-   
-  },
-  deletetap:function(e){
-    this.setData({
-      deletevisable: true,
-      billId: e.currentTarget.dataset.billid
-    });
-  },
-  deleteclick({ detail}) {
-    if (detail.index === 0) {
-      this.setData({
-        deletevisable: false
-      });
-    } else {
-      const action = [...this.data.delectaction];
-      action[1].loading = true;
-      this.setData({
-        delectaction: action
-      });
-      setTimeout(() => {
-        action[1].loading = false;
-        this.setData({
-          deletevisable: false,
-          delectaction: action
-        });
-        $Message({
-          content: '删除成功！'+this.data.billId,
-          type: 'success'
-        });
-      }, 2000);
-    }
   },
   dateChange: function(e) {
     this.setData({
@@ -98,4 +113,9 @@ Page({
       showSearch: !this.data.showSearch
     });
   },
+  showDetail: function(e) {
+    wx.navigateTo({
+      url: '../../pages/billdetail/billdetail?billid=' + e.currentTarget.dataset.billid,
+    })
+  }
 })

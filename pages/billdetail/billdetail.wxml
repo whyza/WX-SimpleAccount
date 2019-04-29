@@ -1,0 +1,83 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='action' bindtap='back'>
+      <text class='cuIcon-back' bindtap='back'></text> 返回
+    </view>
+    <view class='content' style='top:{{StatusBar}}px;'>账单详情</view>
+  </view>
+</view>
+
+<view class='content'>
+
+  <view class='head  bg-white'>
+    <image class='headiamge' src='{{billdetail.classifyImage}}'></image>
+    <text class='text-black'>{{billdetail.classfyName}}</text>
+    <text class=' money text-price {{billdetail.accountTypeId == 1 ? "text-green":"text-orange"}}'>{{billdetail.billMoney}}</text>
+  </view>
+
+  <view class='shadow'>
+    <view class='billd date bg-white solid-bottom margin-top'>
+      <view class='billsame fl text-black'>
+        账单分类
+      </view>
+      <text class='fr billsame text-grey'>{{billdetail.classfyName}}</text>
+    </view>
+
+    <view class='billd date bg-white solid-bottom'>
+      <view class='billsame fl text-black'>
+        账户
+      </view>
+      <text class='fr billsame text-grey'>{{billdetail.accountClassifyName}}</text>
+    </view>
+
+    <view class='billd date bg-white solid-bottom'>
+      <view class='billsame fl text-black'>
+        日期
+      </view>
+      <text class='fr billsame text-grey'>{{billdetail.date}}</text>
+    </view>
+
+    <view class='billd date bg-white solid-bottom' wx:if="{{billdetail.address}}">
+      <view class='billsame fl text-black'>
+        地址
+      </view>
+      <text class='fr address text-grey'>{{billdetail.address}}</text>
+    </view>
+
+    <view class='billd date bg-white solid-bottom' wx:if="{{billdetail.remarks}}">
+      <view class='billsame fl text-black'>
+        备注
+      </view>
+      <text class='fr bzhu text-grey'>{{billdetail.remarks}}</text>
+    </view>
+
+    <view  wx:if="{{billdetail.billImages.length != 0}}">
+      <view class="cu-bar bg-white">
+        <view class="action">
+          图片
+        </view>
+        <view class="action text-grey">
+          {{billdetail.billImages.length}}/4
+        </view>
+      </view>
+      <view class="cu-form-group">
+        <view class="grid col-4 grid-square flex-sub">
+          <view class="bg-img" wx:for="{{billdetail.billImages}}" wx:key="{{index}}" data-url="{{billdetail.billImages[index]}}">
+            <image class='billimage' src='{{billdetail.billImages[index]}}' bindtap="handleImagePreview" data-idx="{{index}}" mode='aspectFill'></image>
+            <view class="cu-tag bg-red" catchtap="DelImg" data-idx="{{index}}">
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='billd date bg-white solid-bottom x margin-top'>
+      <view class='billsame fl text-grey'>
+        创建时间
+      </view>
+      <text class='fr billsame text-grey'>{{billdetail.createtime}}</text>
+    </view>
+  </view>
+  <button class='cu-btn w100 ml bg-red shadow' type='' data-accountType="1" bindtap='delectBill' data-billId='{{billdetail.billid}}'>删除</button>
+  <button class='cu-btn w100 mr fr bg-green shadow' type='' data-accountType="1" bindtap=''>修改</button>
+</view>

@@ -1,2 +1,0 @@
-<wxc-loading class="J_loading" type="mall" _pid="{{_pid}}"></wxc-loading>
-<button bindtap="showLoading">调用 show() 方法</button>

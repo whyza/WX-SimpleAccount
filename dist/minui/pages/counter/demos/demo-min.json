@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-counter": "../../../packages/wxc-counter/dist/index"
-  },
-  "component": true
-}

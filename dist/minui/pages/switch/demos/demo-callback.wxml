@@ -1,2 +1,0 @@
-<wxc-switch bindswitch="onSwitch" _pid="{{_pid}}"></wxc-switch>
-<wxc-toast is-show="{{isShow}}" text="{{text}}" _pid="{{_pid}}"></wxc-toast>

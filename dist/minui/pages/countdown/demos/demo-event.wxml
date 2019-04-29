@@ -1,6 +1,0 @@
-<view class="demo-text">
-    <view>倒计时还剩{{computeTime}}秒</view>
-    <view wx:if="{{isEnd}}" class="demo-text--end">倒计时结束啦</view>
-</view>
-<button size="mini" type="{{isEnd ? 'primary' : 'default'}}" bindtap="countAgain">再来一次</button>
-<wxc-countdown countdown="{{countdown}}" bind:runcount="onRunCount" bind:endcount="onEndCount" _pid="{{_pid}}"></wxc-countdown>

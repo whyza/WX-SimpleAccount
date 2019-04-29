@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-progress": "../../../packages/wxc-progress/dist/index"
-  },
-  "component": true
-}

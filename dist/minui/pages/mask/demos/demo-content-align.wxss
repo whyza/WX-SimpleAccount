@@ -1,6 +1,0 @@
-.mask-demo_content {
-    width: 350rpx;
-    padding: 20rpx;
-    background: #FFF;
-    color: #000;
-  }

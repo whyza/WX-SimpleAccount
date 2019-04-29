@@ -1,1 +1,0 @@
-<wxc-input type="text" placeholder="请输入收货人姓名" _pid="{{_pid}}"></wxc-input>

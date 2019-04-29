@@ -1,7 +1,0 @@
-<wxc-flex class="wrap" cross="top" wrap="wrap" _pid="{{_pid}}">
-    <view class="item"></view>
-    <view class="item"></view>
-    <view class="item"></view>
-    <view class="item"></view>
-    <view class="item"></view>
-</wxc-flex>

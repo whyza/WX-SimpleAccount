@@ -1,1 +1,0 @@
-<wxc-notice scroll="{{true}}" close="{{true}}" show-icon="{{true}}" notice="{{notice}}" bind:close="onClose" _pid="{{_pid}}"></wxc-notice>

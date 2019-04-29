@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-select": "../../../packages/wxc-select/dist/index"
-  },
-  "component": true
-}

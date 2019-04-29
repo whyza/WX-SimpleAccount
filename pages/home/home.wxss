@@ -7,7 +7,9 @@
   width: 100%;
   max-height: 150px;
 }
-
+.billm{
+ margin-bottom: 5px;
+}
 .ac-date {
   position: absolute;
   top: 20px;
@@ -100,18 +102,13 @@
   color: white;
 }
 
-.container {
-  background-color: white;
-}
-
 .right {
   float: right;
 }
 
 .search {
   font-size: 16px;
-  height: 33px;
-  margin: 0 0 8px 0;
+  height: 40px;
   padding: 8px 10px 0 10px;
   transition: all 0.5s;
 }
@@ -127,25 +124,21 @@
 .bill-header {
   height: 30px;
   font-size: 14px;
-  padding-top: 5px;
+  padding-top: 10px;
+  /* margin:5px 0 5px 0; */
 }
 
 .billheader-date {
   float: left;
-  margin-left: 5px;
-  color: #ddd;
+  margin-left: 10px;
 }
 
-.billheader-type {
-  float: right;
-  margin-right: 5px;
-  color: #ddd;
-}
+
 
 .billtype-image {
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
+  height: 45px;
+  width: 45px;
+  /* border-radius: 25px; */
   margin-left: 16px;
 }
 
@@ -169,6 +162,10 @@
   position: absolute;
   top: 40px;
   left: 75px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 200px;
 }
 
 .bill-money {
@@ -176,15 +173,24 @@
   font-weight: 800px;
   float: right;
   margin: 8px 10px 0 0;
-  /* color: #f37b1d; */
 }
 
+.wno{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 260px;
+  float: right;
+  padding-right: 10px;
+}
 .billheader-srtype {
   float: right;
-  margin-right: 5px;
-  color: #ddd;
+  padding-left: 5px;
 }
-
+.billheader-type {
+  float: right;
+  margin-right: 5px;
+}
 .demo-container {
   height: 100%;
   width: 100px;
@@ -296,7 +302,7 @@
 
 .searchFixed {
   font-size: 16px;
-  height: 37px;
+  height: 40px;
   margin: 0 10px 8px 0;
   padding: 8px 0 10px 10px;
   position: fixed;
@@ -308,9 +314,8 @@
 }
 
 .billstop {
-  margin-top: 36px;
+  margin-top: 30px;
 }
-
 .lbutton {
   white-space: nowrap;
   box-sizing: border-box;
@@ -322,7 +327,7 @@
   float: left;
   color: white;
 }
-.lbutton{
-  background: #ed3f14;
 
+.lbutton {
+  background: #ed3f14;
 }

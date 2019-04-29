@@ -1,4 +1,4 @@
-var app = getApp();
+let app = getApp();
 const util = require('../../utils/util.js')
 const { $Message } = require('../../dist/iview/base/index');
 

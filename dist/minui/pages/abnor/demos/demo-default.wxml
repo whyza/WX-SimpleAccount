@@ -1,1 +1,0 @@
-<wxc-abnor type="REQUEST_ERROR" bind:abnortap="onAbnorTap" _pid="{{_pid}}"></wxc-abnor>

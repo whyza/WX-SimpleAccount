@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-price": "../../../packages/wxc-price/dist/index"
-  },
-  "component": true
-}

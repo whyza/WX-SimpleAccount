@@ -1,7 +1,0 @@
-<wxc-mask status="{{maskStatus}}" locked="true" _pid="{{_pid}}">
-    <view class="mask-demo_content">
-        <button bindtap="hideMask">点击我关闭</button>
-    </view>
-</wxc-mask>
-
-<button bindtap="showMask">锁定的遮罩层</button>

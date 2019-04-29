@@ -1,8 +1,0 @@
-<view class="icon_list">
-
-    <view wx:for="{{icons}}" wx:for-item="icon" wx:key="index" class="icon_item_demo">
-        <wxc-icon size="50" type="{{icon}}" _pid="{{_pid}}"></wxc-icon>
-        <text class="icon_type">{{icon}}</text>
-    </view>
-
-</view>

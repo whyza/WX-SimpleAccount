@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-rate": "../../../packages/wxc-rate/dist/index"
-  },
-  "component": true
-}

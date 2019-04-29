@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wxc-dialog": "../../../packages/wxc-dialog/dist/index"
-  },
-  "component": true
-}

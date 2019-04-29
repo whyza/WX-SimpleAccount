@@ -2,7 +2,7 @@
   <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
     <!-- <navigator class='action border-custom' open-type="navigateBack" delta="1" hover-class="none" style='width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)'> -->
       <view class='action'>
-      <text class='icon-back'></text> 返回
+      <text class='cuIcon-back'></text> 返回
     </view>
     <!-- </navigator> -->
     <view class='content' style='top:{{StatusBar}}px;'>消费报表</view>

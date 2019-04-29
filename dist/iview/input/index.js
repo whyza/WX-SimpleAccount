@@ -40,6 +40,14 @@ Component({
       type: Boolean,
       value: false
     },
+    pred: {
+      type: Boolean,
+      value: false
+    },
+    pgreen: {
+      type: Boolean,
+      value: false
+    },
     error: {
       type: Boolean,
       value: false

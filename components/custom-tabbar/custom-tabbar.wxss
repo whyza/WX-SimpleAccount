@@ -4,7 +4,7 @@
   bottom: 30px;
   display: flex;
   justify-content: center;
-  z-index: 999999999999;
+  z-index: 999;
 }
 
 .shadow {
@@ -19,7 +19,7 @@
 .add-action .add {
   position: absolute;
   width: 80rpx;
-  z-index: 999999999;
+  z-index: 999;
   height: 80rpx;
   border-radius: 50%;
   line-height: 80rpx;

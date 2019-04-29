@@ -1,1 +1,0 @@
-<wxc-steps steps="{{steps}}" current="{{current}}" _pid="{{_pid}}"></wxc-steps>

@@ -1,2 +1,0 @@
-<wxc-switch class="item" disabled="true" _pid="{{_pid}}"></wxc-switch>
-<wxc-switch class="item" checked="true" disabled="true" _pid="{{_pid}}"></wxc-switch>
