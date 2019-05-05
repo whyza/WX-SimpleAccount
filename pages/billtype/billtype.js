@@ -35,7 +35,7 @@ Page({
   },
   back: function() {
     wx.navigateBack({
-      delta: 2
+      delta: 1
     })
   },
   navigator: function(e) {
@@ -58,9 +58,5 @@ Page({
     wx.navigateBack({
       delta: 1
     })
-    app.globalData.classifyType = app.globalData.classifyType;
-    // wx.navigateBack({
-    //   url: '../../pages/add/add?billClassfyId=' + e.currentTarget.dataset.billclassfyid + '&billClassfyName' + e._relatedInfo.anchorRelatedText
-    // })
   }
 })

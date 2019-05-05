@@ -69,4 +69,9 @@ Page({
       urls: images
     })
   },
+  updateBill:function(){
+    wx.navigateTo({
+      url: '../../pages/add/add?isUpdate=true&billdetails=' + JSON.stringify(this.data.billdetail),
+    })
+  }
 })

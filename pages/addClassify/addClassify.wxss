@@ -1,0 +1,45 @@
+.swiper-tab {
+  display: flex;
+  margin-top: 60rpx;
+}
+
+.swiper-tab-item {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border: 1px solid #6c6fc0;
+  border-radius: 3px;
+  color: #6c6fc0;
+  font-size: 32rpx;
+}
+
+.active {
+  color: #fff;
+  background: #6c6fc0;
+}
+
+.swiper-box {
+  margin: 30rpx 0;
+  box-sizing: border-box;
+}
+
+.box1-content{
+  overflow: hidden;
+}
+.box1-title{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.box1-content .box1-list{
+  float: left;
+  width: 108rpx;
+  height: 160rpx;
+  margin-right:60px;
+}
+.box1-content .box1-list image{ 
+  width: 68rpx;
+  height: 68rpx;
+  background: #000;
+  border-radius: 100%;
+}

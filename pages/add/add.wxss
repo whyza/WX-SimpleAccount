@@ -8,7 +8,6 @@
   position: absolute;
   right: 10px;
   top: -29px;
-
 }
 
 .address, .billphoto {
@@ -60,13 +59,120 @@
   top: 15px;
   right: 75px;
 }
-.pred{
+
+.pred {
   color: red;
   font-size: 26px;
   font-weight: 600;
-} 
-.pgreen{
+}
+
+.pgreen {
   color: #39b54a;
   font-size: 26px;
   font-weight: 600;
-} 
+}
+
+i-tab {
+  width: 100%;
+}
+
+i-badge {
+  width: 100%;
+}
+
+.headertitle {
+  height: 30px;
+  font-size: 30rpx;
+  line-height: 54rpx;
+  padding-left: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2% 1% 1% 1%;
+  /* height: 200px; */
+}
+
+.typeImage {
+  width: 45px;
+  height: 45px;
+  display: block;
+  position: relative;
+  font-size: 48rpx;
+  margin: 0 auto;
+}
+
+.item {
+  width: 20%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.item .typetext {
+  display: block;
+  color: #888;
+  margin-top: 10rpx;
+  line-height: 40rpx;
+  font-size: 21rpx;
+}
+
+.shadowb {
+  box-shadow: 1px 1rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.dateandtype {
+  margin: 5px 0 5px 0;
+}
+
+.acctype, .date, .dateandtype {
+  height: 50px;
+}
+
+/*wxss*/
+
+/* swiper-item {
+  overflow: scroll;
+} */
+
+.pickercenter {
+  padding: 16px;
+}
+
+.money {
+  height: 74px;
+  position: relative;
+}
+
+.choseclassimage {
+  width: 45px;
+  height: 45px;
+  font-size: 48rpx;
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  z-index: 9999999
+
+}
+
+.swtab {
+  display: flex;
+  width: 180px
+}
+
+.sitem {
+  flex: 1;
+  height: 46rpx;
+  line-height: 46rpx;
+  text-align: center;
+  /* border: 1rpx solid #fff; */
+  color: #fff;
+  border-radius: 3px;
+  font-size: 28rpx;
+}
+
+.active {
+  color: #fff;
+  background: #0081ff;
+}

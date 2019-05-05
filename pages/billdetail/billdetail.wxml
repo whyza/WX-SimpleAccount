@@ -78,6 +78,6 @@
       <text class='fr billsame text-grey'>{{billdetail.createtime}}</text>
     </view>
   </view>
-  <button class='cu-btn w100 ml bg-red shadow' type='' data-accountType="1" bindtap='delectBill' data-billId='{{billdetail.billid}}'>删除</button>
-  <button class='cu-btn w100 mr fr bg-green shadow' type='' data-accountType="1" bindtap=''>修改</button>
+  <button class='cu-btn w100 ml bg-red shadow' type='' bindtap='delectBill' data-billId='{{billdetail.billid}}'>删除</button>
+  <button class='cu-btn w100 mr fr bg-green shadow' type='' bindtap='updateBill'>修改</button>
 </view>

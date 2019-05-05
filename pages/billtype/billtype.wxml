@@ -1,9 +1,8 @@
 <view class="cu-custom" style="height:{{CustomBar}}px;">
   <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
-    <navigator class='action border-custom' open-type="navigateBack" delta="1" hover-class="none" style='width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)'>
-      <text class='cuIcon-back'></text>
-      <text class='cuIcon-homefill' bindtap='back'></text>
-    </navigator>
+    <view class='action' bindtap='back'>
+      <text class='cuIcon-back'></text> 返回
+    </view>
     <view class='content' style='top:{{StatusBar}}px;'>选择分类</view>
   </view>
 </view>

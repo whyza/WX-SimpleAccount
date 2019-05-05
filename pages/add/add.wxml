@@ -1,40 +1,70 @@
 <view class="cu-custom" style="height:{{CustomBar}}px;">
-  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;padding-right:131px">
     <view class='action' bindtap='back'>
       <text class='cuIcon-back' bindtap='back'></text> 返回
     </view>
-    <view class='content' style='top:{{StatusBar}}px;'>新增账单</view>
+    <!-- <view class='content' style='top:{{StatusBar}}px;'>{{isUpdate?"修改账单":"新增账单"}}</view> -->
+    <view class="swtab bg-gradual-blue shadow" wx:if="{{!isUpdate}}">
+      <view class="sitem {{current=='tab1'?'active':''}}" data-current="tab1" bindtap="clickTab">支出</view>
+      <view class="sitem {{current=='tab2'?'active':''}}" data-current="tab2" bindtap="clickTab">收入</view>
+      <view class="sitem {{current=='tab3'?'active':''}}" data-current="tab3" bindtap="clickTab">转账</view>
+    </view>
   </view>
+
 </view>
-<i-tabs current="{{ current }}" bindchange="handleChange">
+
+<!-- <i-tabs current="{{ current }}" bindchange="handleChange" wx:if="{{!isUpdate}}">
   <i-tab key="tab1" title="支出">
   </i-tab>
   <i-tab key="tab2" title="收入">
   </i-tab>
   <i-tab key="tab3" title="转账"></i-tab>
-</i-tabs>
+</i-tabs> -->
 
 <view wx:if="{{current == 'tab1'}}">
-  <i-input type="digit" right pred title="金额" maxlength="11" autofocus placeholder="{{ nummber }}" bindchange="bindInput" />
-  <view class='billclassfy'>
-    <i-input disabled right value="{{billclassfyName}}" title="分类" bindtap='choseBillType' />
-    <image class='billclassfyImg' src='{{billclassfyImg}}'></image>
-  </view>
-  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-    <i-input disabled right value="{{multiArray[1][multiIndex[1]] || '支付宝'}}" title="账户" />
-  </picker>
-  <picker mode="date" style='margin-bottom:35px' start="2015-10-01" end="{{date}}" bindchange="bindDateChange">
-    <i-input disabled right value="{{date}}" title="日期" />
-  </picker>
-  <view class='quick'>
-    <view class='right'>
-      快速选择：
-      <i-tag wx:for="{{tags}}" wx:key="{{index}}" bindchange="onChange" checkable="{{true}}" name="{{index}}" color="{{item.color}}" checked="{{item.checked}}" type="border" style="margin-right:5px;">
-        {{item.name}}
-      </i-tag>
+  <view class='bg-white'>
+    <view class='money'>
+      <image class='choseclassimage' src='{{billclassfyImg}}'></image>
+      <view class="solid-bottom">
+        <i-input type="digit" pred title="金额" maxlength="8" autofocus placeholder="{{ nummber1 }}" value='{{isUpdate?nummber:""}}' bindchange="bindInput" />
+      </view>
+    </view>
+    <view class='choseClassify solid-bottom'>
+      <swiper class='swiper-box' current="{{currentTab}}" duration="300" bindchange="swiperTab" style='height:{{height}}px;'>
+        <block wx:for="{{billClassfy}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+          <swiper-item style="height:200px">
+            <view class='type' id='item{{index}}'>
+              <view class='billtype'>
+                <!-- <view class='headertitle shadowb'>
+                {{item.classfyName}}
+              </view> -->
+                <view class='container'>
+                  <view bindtap="choseClassify" class='item' wx:for="{{item.childrenBillClassfy}}" wx:key="index" wx:for-index="index" wx:for-item="item" data-billClassfyId="{{item.classify}}" data-img='{{item.classifyImage}}' data-name='{{item.classfyName}}'>
+                    <image class="typeImage" src='{{item.classifyImage}}'></image>
+                    <text class='typetext'>{{item.classfyName}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+
     </view>
   </view>
-
+  <view class='bg-white dateandtype'>
+    <view class='date fl'>
+      <picker class='pickercenter' mode="date" start="2015-10-01" end="{{date}}" bindchange="bindDateChange">
+        {{date}}
+      </picker>
+    </view>
+    <view class='acctype fr'>
+      <picker class='pickercenter' mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <!-- <i-input disabled right value="" title="账户" /> -->
+        <view>{{isUpdate&&ischanged?billdetails.accountClassifyName:multiArray[1][multiIndex[1]] || '支付宝'}} </view>
+      </picker>
+    </view>
+  </view>
   <view class='address'>
     <i-input pright2 placeholder="地址" value='{{address}}' title="地址">
     </i-input>
@@ -66,26 +96,49 @@
   <button class='cu-btn block bg-red margin-tb-sm lg' type='' data-accountType="0" bindtap='addbill'>保存</button>
 </view>
 <view wx:if="{{current == 'tab2'}}">
-  <i-input type="digit" right  pgreen title="金额" maxlength="11" autofocus placeholder="{{ nummber }}" bindchange="bindInput" />
-  <view class='billclassfy'>
-    <i-input disabled right value="{{billclassfyName}}" title="分类" bindtap='choseBillType' />
-    <image class='billclassfyImg' wx:if="{{billclassfyImg}}" src='{{billclassfyImg}}'></image>
-  </view>
-  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-    <i-input disabled right value="{{multiArray[1][multiIndex[1]]}}" title="账户" />
-  </picker>
-  <picker mode="date" style='margin-bottom:35px' start="2015-10-01" end="{{date}}" bindchange="bindDateChange">
-    <i-input disabled right value="{{date}}" title="日期" />
-  </picker>
-  <view class='quick'>
-    <view class='right'>
-      快速选择：
-      <i-tag wx:for="{{tags}}" wx:key="{{index}}" bindchange="onChange" checkable="{{true}}" name="{{index}}" color="{{item.color}}" checked="{{item.checked}}" type="border" style="margin-right:5px;">
-        {{item.name}}
-      </i-tag>
+  <view class='bg-white'>
+    <view class='money'>
+      <image class='choseclassimage' src='{{billclassfyImg}}'></image>
+      <view class="solid-bottom">
+        <i-input type="digit" pgreen title="金额" maxlength="8" autofocus placeholder="{{ nummber1 }}" value='{{isUpdate?nummber:""}}' bindchange="bindInput" />
+      </view>
+    </view>
+    <view class='choseClassify solid-bottom'>
+      <swiper class='swiper-box' current="{{currentTab2}}" duration="300" bindchange="swiperTab2" style='height:{{height}}px;'>
+        <block wx:for="{{billClassfy}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+          <swiper-item style="height:200px">
+            <view class='type' id='item{{index}}'>
+              <view class='billtype  bg-white'>
+                <!-- <view class='headertitle shadowb'>
+                {{item.classfyName}}
+              </view> -->
+                <view class='container'>
+                  <view bindtap="choseClassify" class='item' wx:for="{{item.childrenBillClassfy}}" wx:key="index" wx:for-index="index" wx:for-item="item" data-billClassfyId="{{item.classify}}" data-img='{{item.classifyImage}}' data-name='{{item.classfyName}}'>
+                    <image class="typeImage" src='{{item.classifyImage}}'></image>
+                    <text class='typetext'>{{item.classfyName}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+
     </view>
   </view>
-
+  <view class='bg-white dateandtype'>
+    <view class='date fl'>
+      <picker class='pickercenter' mode="date" start="2015-10-01" end="{{date}}" bindchange="bindDateChange">
+        {{date}}
+      </picker>
+    </view>
+    <view class='acctype fr'>
+      <picker class='pickercenter' mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <!-- <i-input disabled right value="" title="账户" /> -->
+        <view>{{isUpdate&&ischanged?billdetails.accountClassifyName:multiArray[1][multiIndex[1]] || '支付宝'}} </view>
+      </picker>
+    </view>
+  </view>
   <view class='address'>
     <i-input pright2 placeholder="地址" value='{{address}}' title="地址">
     </i-input>

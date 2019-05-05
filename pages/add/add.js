@@ -11,66 +11,36 @@ Page({
   data: {
     multiArray: "",
     multiIndex: [0, 0],
-    billclassfyName: "请选择分类",
     imagepath: [],
     address: "",
+    ischanged: false,
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
     current: 'tab1',
+    nummber1: "0.00",
     nummber: "0.00",
     date: util.formatDate(new Date()),
     remarks: "",
-    oneChecked: false,
-    tags: [{
-        name: '今天',
-        checked: true,
-        color: 'default'
-      },
-      {
-        name: '昨天',
-        checked: false,
-        color: 'red'
-      },
-      {
-        name: "前天",
-        checked: false,
-        color: 'blue'
-      }
-    ]
-  },
-  handleChange({detail}) {
-    this.setData({
-      current: detail.key
-    });
-    app.globalData.key = detail.key
-    this.change();
-  },
-  //记录用户选择的分类
-  change: function() {
-    if (app.globalData.key == "tab2") {
-      app.globalData.classifyType = 1
-      this.setData({
-        billclassfyid: app.globalData.billclassfyid1 || "",
-        billclassfyName: app.globalData.billclassfyName1 || "请选择分类",
-        billclassfyImg: app.globalData.billclassfyImg1 || ""
-      })
-    } else if (app.globalData.key == "tab1"){
-      app.globalData.classifyType = 0;
-      this.setData({
-        billclassfyid: app.globalData.billclassfyid || "",
-        billclassfyName: app.globalData.billclassfyName || "请选择分类",
-        billclassfyImg: app.globalData.billclassfyImg || ""
-      })
-    }
+    // oneChecked: false,
+    billdetails: "",
   },
   bindDateChange: function(e) {
     this.setData({
       date: e.detail.value
     })
   },
-  onChange(event) {
-    const detail = event.detail;
+  queruClassify: function() {
+    var that = this;
+    http.HttpRequst("GET", "queryAllBillClassfy", {
+      userId: app.globalData.userInfo.userId,
+      classifyType: app.globalData.classifyType
+    }, true, 1, function(res) {
+      that.setData({
+        billClassfy: res.data,
+        height: 81 * Math.ceil(res.data[0].childrenBillClassfy.length / 5.0)
+      })
+    })
   },
   choseImage: function() {
     let that = this;
@@ -118,21 +88,16 @@ Page({
   handleImagePreview(e) {
     let idx = e.target.dataset.idx
     let images = this.data.imagepath
-    console.log(images)
     wx.previewImage({
       current: images[idx], //当前图片地址
       urls: images
-    })
-  },
-  choseBillType: function() {
-    wx.navigateTo({
-      url: '../../pages/billtype/billtype?classifyType=' + app.globalData.classifyType,
     })
   },
   back: function() {
     wx.navigateBack({
       delta: 1
     })
+    app.globalData.key = "tab1"
   },
   changeSwitch: function(event) {
     this.setData({
@@ -159,6 +124,9 @@ Page({
     }
   },
   bindMultiPickerColumnChange(e) {
+    this.setData({
+      ischanged: false
+    })
     const data = {
       multiArray: this.data.multiArray,
       multiIndex: this.data.multiIndex
@@ -182,8 +150,6 @@ Page({
     app.globalData.cid = acctwoarray[select_key]['accountClassifyId']
   },
   onShow: function() {
-    this.change();
-    // app.globalData.classifyType = 0;
     if (app.globalData.accoenarray == "") {
       this.queryAccClassifyInfoByfId();
     } else {
@@ -192,6 +158,43 @@ Page({
       })
       this.queryAccountClassifyInfo(1, app.globalData.userInfo.userId);
     }
+  },
+  onLoad: function(options) {
+    let userId = app.globalData.userInfo.userId
+    let that = this;
+    if (options.isUpdate) {
+      var billdetails = JSON.parse(options.billdetails)
+      this.setData({
+        billdetails: billdetails,
+        isUpdate: true,
+        billclassfyName: billdetails.classfyName,
+        imagepath: billdetails.billImages,
+        billclassfyImg: billdetails.classifyImage,
+        billclassfyid: billdetails.classify,
+        date: billdetails.date,
+        nummber: billdetails.billMoney,
+        remarks: billdetails.remarks,
+        billid: billdetails.billid,
+        ischanged: true,
+        nummber1: billdetails.billMoney
+      })
+      if (billdetails.address != "") {
+        this.setData({
+          address: billdetails.address,
+          getLocation: true
+        })
+      }
+      app.globalData.classifyType = billdetails.accountTypeId
+      app.globalData.cid = billdetails.accountClassifyId
+    } else {
+      app.globalData.classifyType = 0;
+      app.globalData.key = "tab1"
+      this.setData({
+        billclassfyid: 10,
+        billclassfyImg: "http://pq1gborr2.bkt.clouddn.com/rice.png"
+      })
+    }
+    this.queruClassify();
   },
   queryAccClassifyInfoByfId: function() {
     let that = this;
@@ -223,12 +226,12 @@ Page({
         multiArray: [arrdata, acctwoarray],
         // acctwoarray: res.data
       })
-      app.globalData.acctwoarray = acctwoarray
+      app.globalData.acctwoarray = res.data.data
     })
   },
   addbill: function(e) {
     let that = this;
-    let url = "addBill";
+    let url = this.data.isUpdate ? "updateBill" : "addBill";
     let bill = {
       userId: app.globalData.userInfo.userId,
       accountClassifyId: app.globalData.cid || 7,
@@ -240,7 +243,17 @@ Page({
       address: that.data.address,
       images: that.data.imagepath
     }
-    http.HttpRequst("POST", url, bill, true, 0, function(res) {
+    let updatebill = {
+      accountClassifyId: app.globalData.cid || 7,
+      classify: that.data.billclassfyid,
+      date: that.data.date,
+      remarks: that.data.remarks,
+      billMoney: that.data.nummber,
+      address: that.data.address,
+      images: that.data.imagepath,
+      billid: that.data.billid
+    }
+    http.HttpRequst("POST", url, this.data.isUpdate ? updatebill : bill, true, 0, function(res) {
       if (!res.data.data) {
         wx.showModal({
           title: '警告',
@@ -249,11 +262,10 @@ Page({
           confirmText: '确认'
         });
       } else {
-        app.globalData.key="tab1";
+        app.globalData.key = "tab1";
         wx.switchTab({
           url: '../../pages/home/home',
           success: function(e) {
-            wx.removeStorageSync("bill");
             let page = getCurrentPages().pop();
             if (page == undefined || page == null) return;
             page.onLoad();
@@ -266,15 +278,71 @@ Page({
     this.setData({
       nummber: e.detail.detail.value
     })
-    if (e.detail.detail.value == "") {
-      this.setData({
-        nummber: "0.00"
-      })
-    }
   },
   bindInputRemark: function(e) {
     this.setData({
       remarks: e.detail.detail.value
     })
+  },
+  swiperTab2: function(e) {
+    var that = this;
+    that.get_wxml('#item' + e.detail.current, (rects) => {
+      that.setData({
+        height: rects[0].height
+      })
+    })
+    that.setData({
+      currentTab2: e.detail.current
+    });
+  },
+  //滑动切换
+  swiperTab: function(e) {
+    var that = this;
+    that.get_wxml('#item' + e.detail.current, (rects) => {
+      that.setData({
+        height: rects[0].height
+      })
+    })
+    that.setData({
+      currentTab: e.detail.current
+    });
+  },
+  get_wxml: function(className, callback) {
+    wx.createSelectorQuery().selectAll(className).boundingClientRect(callback).exec()
+  },
+  choseClassify: function(e) {
+    this.setData({
+      billclassfyid: e.currentTarget.dataset.billclassfyid,
+      billclassfyName: e.currentTarget.dataset.name,
+      billclassfyImg: e.currentTarget.dataset.img
+    });
+  },
+  //点击切换模式
+  clickTab: function(e) {
+    var that = this;
+    var key = e.currentTarget.dataset.current;
+    if (that.data.current == e.currentTarget.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        current: e.currentTarget.dataset.current
+      })
+      app.globalData.key = key
+      if (app.globalData.key == "tab2") {
+        app.globalData.classifyType = 1
+        this.setData({
+          billclassfyid: 46,
+          billclassfyImg: "http://pq1gborr2.bkt.clouddn.com/gzl.png"
+        })
+        this.queruClassify();
+      } else if (app.globalData.key == "tab1") {
+        app.globalData.classifyType = 0;
+        this.setData({
+          billclassfyid: 10,
+          billclassfyImg: "http://pq1gborr2.bkt.clouddn.com/rice.png"
+        })
+        this.queruClassify();
+      }
+    }
   }
 })
