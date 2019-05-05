@@ -15,19 +15,19 @@
   </view>
   <view class="topnavFixed">
     <view class='tm-zhichu'>本月支出(元)</view>
-    <view class="{{scrollTop>36 ? 'monyfiex' : 'money'}}">22.00</view>
+    <view class="{{scrollTop>36 ? 'monyfiex' : 'money'}}">{{sumpay}}</view>
     <i-icon class='ac-date' type="activity" size="32" />
-    <picker class='now-date' mode="date" :value="date" start="2015-09-01" end="{{date}}" bindchange='dateChange '>
+    <picker class='now-date' mode="date" :value="date" start="2017-01-01" end="{{enddate}}" fields="month" bindchange='dateChange'>
       <view class='border-picker'>
         <view class="picker">
           {{date}}
-          <text class='Icon-triangledownfill lg text-gray Icon-picker'></text>
+          <text class='cuIcon-triangledownfill lg text-gray icon-picker'></text>
         </view>
       </view>
     </picker>
   </view>
   <view class='tm-shouru'>本月收入</view>
-  <view class='shour-money'>22.00</view>
+  <view class='shour-money'>{{sumincome}}</view>
   <view class='tm-yuer'>本月结余</view>
   <view class='yuer-money'>22.00</view>
   <view class="container">

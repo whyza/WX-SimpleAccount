@@ -84,7 +84,7 @@ i-badge {
   height: 30px;
   font-size: 30rpx;
   line-height: 54rpx;
-  padding-left: 5px;
+  padding-left: 11px;
 }
 
 .container {
@@ -152,27 +152,85 @@ i-badge {
   position: absolute;
   top: 10px;
   right: 50px;
-  z-index: 9999999
-
+  z-index: 9999999;
 }
 
 .swtab {
   display: flex;
-  width: 180px
+  width: 180px;
 }
 
-.sitem {
+.litem {
   flex: 1;
   height: 46rpx;
   line-height: 46rpx;
   text-align: center;
-  /* border: 1rpx solid #fff; */
   color: #fff;
-  border-radius: 3px;
   font-size: 28rpx;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+
+.citem {
+  flex: 1;
+  height: 46rpx;
+  line-height: 46rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  border: 1px solid #fff;
+}
+
+.ritem {
+  flex: 1;
+  height: 46rpx;
+  line-height: 46rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.litem {
+  border-radius: 5px 0 0 5px;
+}
+
+.ritem {
+  border-radius: 0 5px 5px 0;
 }
 
 .active {
-  color: #fff;
-  background: #0081ff;
+  color: #1cbbb4;
+  background: #fff;
+}
+
+.choseClassify {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.choseClassify .dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.choseClassify .dots .dot {
+  margin: 0 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: #ddd;
+  border-radius: 8rpx;
+  transition: all 0.6s;
+}
+
+.choseClassify .dots .dot.active {
+  width: 24rpx;
+  background: #1cbbb4;
 }

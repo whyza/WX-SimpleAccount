@@ -9,7 +9,8 @@
     "pages/add/add",
     "pages/billtype/billtype",
     "pages/billdetail/billdetail",
-    "pages/addClassify/addClassify"
+    "pages/addClassify/addClassify",
+    "pages/charts/charts"
   ],
   "window": {
     "backgroundTextStyle": "light",

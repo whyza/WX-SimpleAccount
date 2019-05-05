@@ -4,6 +4,7 @@ module.exports = {
 // const baseUrl = "http://localhost:8081/"; //测试环境
 const baseUrl = "https://iazuresky.com:8443/"; //正式环境
 // const baseUrl = "https://192.168.199.211:8443/";
+// const baseUrl = "https://192.168.9.106:8443/";
 //ask是是否要进行询问授权，true为要，false为不要
 // sessionChoose为1,2,3,4,所以paramSession下标为0的则为空
 function HttpRequst(method, url, params, loading, header, callBack) {

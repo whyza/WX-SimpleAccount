@@ -13,7 +13,7 @@
 .ac-date {
   position: absolute;
   top: 20px;
-  right: 112px;
+  right: 88px;
   color: white;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .border-picker {
-  width: 93px;
+  width: 75px;
   height: 26px;
   padding: 4px;
   border: 1px solid white;

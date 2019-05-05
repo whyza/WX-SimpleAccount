@@ -15,13 +15,15 @@ const formatDate = date => {
 
   return [year, month, day].map(formatNumber).join('-') 
 }
-// const formatDateCn = string => {
-//   const year = date.getFullYear()
-//   const month = date.getMonth() + 1
-//   const day = date.getDate()
+const formatyearm = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  return [year, month].map(formatNumber).join('-') 
+}
 
-//   return [year, month, day].map(formatNumber).join('-')
-// }
+const getYearAndMonth= date=>{
+  return date.split("-")
+}
 
 const formatNumber = n => {
   n = n.toString()
@@ -30,6 +32,8 @@ const formatNumber = n => {
 
 module.exports = {
   formatTime: formatTime,
-  formatDate:formatDate
+  formatDate:formatDate,
+  formatyearm: formatyearm,
+  getYearAndMonth: getYearAndMonth
   // formatDateCn: formatDateCn
 }

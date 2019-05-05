@@ -13,14 +13,13 @@ App({
       }
     })
   },
-
   globalData: {
     multiArray:"",
     multiIndex: [0, 0],
     accarray:"",
     accoenarray:"",
     acctwoarray:"",
-    classifyType:0,
+    // clasop'we
     uid: "",
     hasUserInfo: false,
     code: 1,

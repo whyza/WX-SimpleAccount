@@ -20,6 +20,8 @@ Page({
     current: 'tab1',
     nummber1: "0.00",
     nummber: "0.00",
+    currentTab: 0,
+    currentTab2: 0,
     date: util.formatDate(new Date()),
     remarks: "",
     // oneChecked: false,
@@ -38,7 +40,7 @@ Page({
     }, true, 1, function(res) {
       that.setData({
         billClassfy: res.data,
-        height: 81 * Math.ceil(res.data[0].childrenBillClassfy.length / 5.0)
+        height: 30 + 81*Math.ceil(res.data[0].childrenBillClassfy.length / 5.0)
       })
     })
   },
@@ -55,6 +57,14 @@ Page({
           icon: 'loading'
         })
         for (let i = 0; i < tempFilePaths.length; i++) {
+          const fs = wx.getFileSystemManager();
+          fs.readFile({
+            filePath: tempFilePaths[i],
+            encoding:"base64",
+            success:function(data){
+              console.log(data)
+            }
+          })
           //七牛上传
           qiniuUploader.upload(tempFilePaths[i], (res) => {
             that.setData({
@@ -232,47 +242,56 @@ Page({
   addbill: function(e) {
     let that = this;
     let url = this.data.isUpdate ? "updateBill" : "addBill";
-    let bill = {
-      userId: app.globalData.userInfo.userId,
-      accountClassifyId: app.globalData.cid || 7,
-      classify: that.data.billclassfyid,
-      date: that.data.date,
-      remarks: that.data.remarks,
-      billMoney: that.data.nummber,
-      accountTypeId: e.currentTarget.dataset.accounttype,
-      address: that.data.address,
-      images: that.data.imagepath
-    }
-    let updatebill = {
-      accountClassifyId: app.globalData.cid || 7,
-      classify: that.data.billclassfyid,
-      date: that.data.date,
-      remarks: that.data.remarks,
-      billMoney: that.data.nummber,
-      address: that.data.address,
-      images: that.data.imagepath,
-      billid: that.data.billid
-    }
-    http.HttpRequst("POST", url, this.data.isUpdate ? updatebill : bill, true, 0, function(res) {
-      if (!res.data.data) {
-        wx.showModal({
-          title: '警告',
-          content: res.data.message,
-          showCancel: false,
-          confirmText: '确认'
-        });
-      } else {
-        app.globalData.key = "tab1";
-        wx.switchTab({
-          url: '../../pages/home/home',
-          success: function(e) {
-            let page = getCurrentPages().pop();
-            if (page == undefined || page == null) return;
-            page.onLoad();
-          }
-        })
+    if (Math.abs(that.data.nummber) === 0) {
+      wx.showModal({
+        title: '警告',
+        content: "金额不能为0",
+        showCancel: false,
+        confirmText: '确认'
+      });
+    } else {
+      let bill = {
+        userId: app.globalData.userInfo.userId,
+        accountClassifyId: app.globalData.cid || 7,
+        classify: that.data.billclassfyid,
+        date: that.data.date,
+        remarks: that.data.remarks,
+        billMoney: that.data.nummber,
+        accountTypeId: e.currentTarget.dataset.accounttype,
+        address: that.data.address,
+        images: that.data.imagepath
       }
-    })
+      let updatebill = {
+        accountClassifyId: app.globalData.cid || 7,
+        classify: that.data.billclassfyid,
+        date: that.data.date,
+        remarks: that.data.remarks,
+        billMoney: that.data.nummber,
+        address: that.data.address,
+        images: that.data.imagepath,
+        billid: that.data.billid
+      }
+      http.HttpRequst("POST", url, this.data.isUpdate ? updatebill : bill, true, 0, function(res) {
+        if (!res.data.data) {
+          wx.showModal({
+            title: '警告',
+            content: res.data.message,
+            showCancel: false,
+            confirmText: '确认'
+          });
+        } else {
+          app.globalData.key = "tab1";
+          wx.switchTab({
+            url: '../../pages/home/home',
+            success: function(e) {
+              let page = getCurrentPages().pop();
+              if (page == undefined || page == null) return;
+              page.onLoad();
+            }
+          })
+        }
+      })
+    }
   },
   bindInput: function(e) {
     this.setData({
@@ -325,7 +344,8 @@ Page({
       return false;
     } else {
       that.setData({
-        current: e.currentTarget.dataset.current
+        current: e.currentTarget.dataset.current,
+        nummber1: that.data.nummber == "" ? "0.00" : that.data.nummber
       })
       app.globalData.key = key
       if (app.globalData.key == "tab2") {

@@ -1,4 +1,19 @@
-
-.mb20{
+.mb20 {
   margin-bottom: 20px;
+}
+
+.iconbgc, .iconbgcw {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 40px;
+}
+
+.iconbgc {
+  background-color: #0396ff;
+}
+
+.iconbgcw {
+  background-color: #ddd;
 }

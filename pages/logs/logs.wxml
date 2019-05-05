@@ -8,16 +8,3 @@
     <view class='content' style='top:{{StatusBar}}px;'>消费报表</view>
   </view>
 </view>
-
-<view class="padding text-center">
-  <view class="padding-xl radius shadow bg-gradual-green"> 周消费</view>
-  <view class="padding-xl radius shadow-blur bg-gradual-purple margin-top">
-    <view>近6月支出</view>
-  </view>
-  <view class="padding-xl radius shadow-blur bg-gradual-red margin-top">
-    <view>近6月收入</view>
-  </view>
-  <view class="padding-xl radius shadow-blur bg-gradual-blue  margin-top ">
-    <view>排行</view>
-  </view>
-</view>

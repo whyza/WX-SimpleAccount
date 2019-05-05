@@ -1,0 +1,31 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <!-- <navigator class='action border-custom' open-type="navigateBack" delta="1" hover-class="none" style='width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)'> -->
+    <view class='action' bindtap='back'>
+      <text class='cuIcon-back' bindtap='back'></text> 返回
+    </view>
+    <!-- </navigator> -->
+    <view class='content' style='top:{{StatusBar}}px;'>周消费报表</view>
+  </view>
+</view>
+
+<view class='header bg-white  solid-bottom margin-top margin'>
+  <view class="allzhichu fl ">
+    总支出
+  </view>
+  <view class='text-price fr money'>2520</view>
+</view>
+<view class="containert margin ">
+  <view class="swtab shadow">
+    <view class="litem {{current=='tab1'?'active':''}}" data-current="tab1" bindtap="clickTab">支出</view>
+    <view class="ritem {{current=='tab2'?'active':''}}" data-current="tab2" bindtap="clickTab">收入</view>
+  </view>
+  <view class='shadow'>
+    <view class="container" wx:if="{{current == 'tab1'}}">
+      <ff-canvas id="guage-dom" canvas-id="guage" ec="{{ec}}"></ff-canvas>
+    </view>
+     <view class="container" wx:if="{{current == 'tab2'}}">
+      <ff-canvas id="gungeline" canvas-id="gungeline" opts="{{opts}}"></ff-canvas>
+    </view>
+  </view>
+</view>

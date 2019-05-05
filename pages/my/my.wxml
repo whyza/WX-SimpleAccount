@@ -8,9 +8,19 @@
   <i-card full title="{{userInfo.userName}}" extra="额外内容" thumb="{{userInfo.avatarUrl}}">
     <view slot="content">内容不错</view>
     <view slot="footer">尾部内容</view>
+
   </i-card>
 </view>
+<view class='iconbgc'>
 
+ <text class='iconfont iconcar' style='color:#fff'></text>
+
+</view>
+<view class='iconbgcw'>
+
+ <text class='iconfont iconcar'></text>
+
+</view>
 <i-cell-group>
   <i-cell title="只显示箭头" is-link></i-cell>
   <i-cell title="只显示箭头" is-link></i-cell>

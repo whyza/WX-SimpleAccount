@@ -1,5 +1,6 @@
 /**app.wxss**/
 @import "icon.wxss";
+@import "fonts/iconfont.wxss";
 @import "colorui.wxss";
 page{
    height: 100%;
@@ -15,6 +16,12 @@ page{
   justify-content: space-between;
 }
 
+<i
+
+
+
+
+ <i class="iconfont icon-unie62e" wx:if="{{id==0}}"></i> <i class="iconfont icon-unie62e" wx:if="{{id==0}}"></i>aasdqweqw123151256488888asdasdaaaaaaaawwwwwwwwdassd
 .nav-li {
   padding: 30rpx;
   border-radius: 12rpx;

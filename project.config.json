@@ -10,12 +10,13 @@
 		"minified": true,
 		"newFeature": true,
 		"nodeModules": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
 	"appid": "wxfd2ebef9dd9999af",
-	"projectname": "%E8%87%AA%E5%AE%9A%E4%B9%89tabbar",
+	"projectname": "simpleaccount",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

@@ -8,7 +8,7 @@
 </view>
 <view class='type'>
   <view class='billtype  bg-white' wx:for="{{billClassfy}}" wx:key="index" wx:for-index="index" wx:for-item="item">
-    <view class='headertitle shadowb'>
+    <view class='headertitle'>
       {{item.classfyName}}
     </view>
     <view class='container'>

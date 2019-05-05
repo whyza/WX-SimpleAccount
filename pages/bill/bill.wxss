@@ -15,4 +15,9 @@
 ff-canvas {
   width: 100%;
   height: 100%;
+}.padding-xl {
+  padding: 50rpx;
+}
+.padding {
+  padding: 30rpx;
 }
