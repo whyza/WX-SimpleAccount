@@ -17,25 +17,22 @@
 <view wx:if="{{current == 'tab1'}}">
   <view class='bg-white'>
     <view class='money'>
-      <image class='choseclassimage' src='{{billclassfyImg}}'></image>
+      <text class='choseclassimage iconbgc text-white shadow typeImage  iconfont {{billclassfyImg}}'></text>
       <view class="solid-bottom">
         <i-input type="digit" pred title="金额" maxlength="8" autofocus placeholder="{{ nummber1 }}" value='{{isUpdate?nummber:""}}' bindchange="bindInput" />
       </view>
     </view>
     <view class='choseClassify solid-bottom'>
-
-      <swiper class='swiper-box' current="{{currentTab}}" duration="300" bindchange="swiperTab" style='height:{{height}}px;'>
-        <block wx:for="{{billClassfy}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+      <swiper class='swiper-box' current="{{currentTab}}" duration="300" bindchange="swiperTab" style='height:180px;'>
+        <block wx:for="{{billClassfy}}" wx:key="index1" wx:for-index="index1" wx:for-item="item1">
           <swiper-item style="height:200px">
-            <view class='type' id='item{{index}}'>
-              <view class='billtype'>
-                <view class='headertitle'>
-                  {{item.classfyName}}
-                </view>
+            <view class='type'>
+              <view class='billtypet bg-white'>
                 <view class='container'>
-                  <view bindtap="choseClassify" class='item' wx:for="{{item.childrenBillClassfy}}" wx:key="index" wx:for-index="index" wx:for-item="item" data-billClassfyId="{{item.classify}}" data-img='{{item.classifyImage}}' data-name='{{item.classfyName}}'>
-                    <image class="typeImage" src='{{item.classifyImage}}'></image>
-                    <text class='typetext'>{{item.classfyName}}</text>
+                  <view wx:for="{{item1}}" wx:key="index" wx:for-index="index" wx:for-item="item" bindtap="{{(item1.length - 1 == index && billClassfy.length-1==index1)?'editClassify':'choseClassify'}}" class='item' data-billClassfyId="{{item.classify}}" data-img='{{item.icon}}' data-name='{{item.classfyName}}'>
+                    <text class='{{billclassfyid == item.classify?"iconbgc text-white":"iconbgcw"}} shadow typeImage  iconfont {{item.icon}}'></text>
+                    <text class='typetext'>{{item.classfyName}}
+                    </text>
                   </view>
                 </view>
               </view>
@@ -95,25 +92,22 @@
 <view wx:if="{{current == 'tab2'}}">
   <view class='bg-white'>
     <view class='money'>
-      <image class='choseclassimage' src='{{billclassfyImg}}'></image>
+      <text class='choseclassimage iconbgc text-white shadow typeImage  iconfont {{billclassfyImg}}'></text>
       <view class="solid-bottom">
         <i-input type="digit" pgreen title="金额" maxlength="8" autofocus placeholder="{{ nummber1 }}" value='{{isUpdate?nummber:""}}' bindchange="bindInput" />
       </view>
     </view>
     <view class='choseClassify solid-bottom'>
-      <swiper class='swiper-box' current="{{currentTab2}}" duration="300" bindchange="swiperTab2" style='height:{{height}}px;'>
-        <block wx:for="{{billClassfy}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+      <swiper class='swiper-box' current="{{currentTab2}}" duration="300" bindchange="swiperTab" style='height:180px;'>
+        <block wx:for="{{billClassfy}}" wx:key="index1" wx:for-index="index1" wx:for-item="item1">
           <swiper-item style="height:200px">
-            <view class='type' id='item{{index}}'>
-              <view class='billtype  bg-white'>
-                <view class='headertitle'>
-                  {{item.classfyName}}
-                </view>
+            <view class='type'>
+              <view class='billtypet bg-white'>
                 <view class='container'>
-
-                  <view bindtap="choseClassify" class='item' wx:for="{{item.childrenBillClassfy}}" wx:key="index" wx:for-index="index" wx:for-item="item" data-billClassfyId="{{item.classify}}" data-img='{{item.classifyImage}}' data-name='{{item.classfyName}}'>
-                    <image class="typeImage" src='{{item.classifyImage}}'></image>
-                    <text class='typetext'>{{item.classfyName}}</text>
+                  <view wx:for="{{item1}}" wx:key="index" wx:for-index="index" wx:for-item="item" bindtap="{{(item1.length - 1 == index && billClassfy.length-1==index1)?'editClassify':'choseClassify'}}" class='item' data-billClassfyId="{{item.classify}}" data-img='{{item.icon}}' data-name='{{item.classfyName}}'>
+                    <text class='{{billclassfyid == item.classify?"iconbgc text-white":"iconbgcw"}} shadow typeImage  iconfont {{item.icon}}'></text>
+                    <text class='typetext'>{{item.classfyName}}
+                    </text>
                   </view>
                 </view>
               </view>

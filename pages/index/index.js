@@ -6,7 +6,10 @@ Page({
     userInfo: {},
     hasUserInfo: false, //未授权不显示
     canIUse: wx.canIUse('button.open-type.getUserInfo'), //判断小程序的API，回调，参数，组件等是否在当前版本可用。
-    globalData: app.globalData.current
+    globalData: app.globalData.current,
+    StatusBar: app.globalData.StatusBar,
+    CustomBar: app.globalData.CustomBar,
+    Custom: app.globalData.Custom
   },
   onLoad(option) {
     wx.hideTabBar({
@@ -73,12 +76,6 @@ Page({
           hasUserInfo: false
         });
       } else {
-        wx.showModal({
-          title: '警告',
-          content: '网络错误!!!',
-          showCancel: false,
-          confirmText: '返回授权'
-        });
         that.setData({
           hasUserInfo: true
         });

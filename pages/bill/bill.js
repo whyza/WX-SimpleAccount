@@ -17,9 +17,9 @@ Page({
       url: '../../pages/charts/charts',
     })
   },
-  gototest:function(){
-    wx.navigateTo({
-      url: '../../pages/addClassify/addClassify',
-    })
-  }
+  // gototest:function(){
+  //   wx.navigateTo({
+  //     url: '../../pages/addClassify/addClassify',
+  //   })
+  // }
 })

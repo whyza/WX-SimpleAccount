@@ -5,39 +5,16 @@
 </view>
 
 <view class="mb20">
-  <i-card full title="{{userInfo.userName}}" extra="额外内容" thumb="{{userInfo.avatarUrl}}">
-    <view slot="content">内容不错</view>
-    <view slot="footer">尾部内容</view>
-
+  <i-card full title="" extra="{{userInfo.userName}}" thumb="{{userInfo.avatarUrl}}">
+    <!-- <view slot="content">内容不错</view>
+    <view slot="footer">尾部内容</view> -->
   </i-card>
 </view>
-<view class='iconbgc'>
-
- <text class='iconfont iconcar' style='color:#fff'></text>
-
-</view>
-<view class='iconbgcw'>
-
- <text class='iconfont iconcar'></text>
-
-</view>
 <i-cell-group>
-  <i-cell title="只显示箭头" is-link></i-cell>
-  <i-cell title="只显示箭头" is-link></i-cell>
-  <i-cell title="只显示箭头" is-link></i-cell>
-  <i-cell title="只显示箭头" is-link></i-cell>
-  <i-cell title="只显示箭头" is-link></i-cell>
+  <i-cell title="收入分类管理" is-link></i-cell>
+  <i-cell title="支出分类管理" is-link></i-cell>
+  <i-cell title="资产分类管理" is-link></i-cell>
+  <i-cell title="预算管理" is-link></i-cell>
+  <i-cell title="反馈与建议" is-link></i-cell>
   <i-cell title="跳转到首页" is-link url="/pages/index/index"></i-cell>
-  <i-cell title="开关">
-    <switch slot="footer" checked />
-  </i-cell>
 </i-cell-group>
-
-
-<i-button type="ghost" bind:click="handleDefault">默认提醒</i-button>
-<i-button type="ghost" bind:click="handleSuccess">成功提醒</i-button>
-<i-button type="ghost" bind:click="handleWarning">警告提醒</i-button>
-<i-button type="ghost" bind:click="handleError">错误提醒</i-button>
-<i-button type="ghost" bind:click="handleDuration">自定义持续时间</i-button>
-
-<i-message id="message" />

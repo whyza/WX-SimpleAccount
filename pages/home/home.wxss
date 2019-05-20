@@ -135,45 +135,6 @@
 
 
 
-.billtype-image {
-  height: 45px;
-  width: 45px;
-  /* border-radius: 25px; */
-  margin-left: 16px;
-}
-
-.bill-container {
-  position: relative;
-  height: 70px;
-  padding: 10px 0 20px 0;
-}
-
-.billtype {
-  position: absolute;
-  top: 8px;
-  left: 73px;
-  font-size: 15px;
-  font-weight: 200px;
-}
-
-.bill-content {
-  font-size: 12px;
-  color: #ddd;
-  position: absolute;
-  top: 40px;
-  left: 75px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 200px;
-}
-
-.bill-money {
-  font-size: 24px;
-  font-weight: 800px;
-  float: right;
-  margin: 8px 10px 0 0;
-}
 
 .wno{
   overflow: hidden;
@@ -330,4 +291,47 @@
 
 .lbutton {
   background: #ed3f14;
+}
+
+
+
+
+
+.bill-container {
+  position: relative;
+  height: 70px;
+  padding: 10px 0 20px 0;
+}
+
+.billtype {
+  position: absolute;
+  top: 8px;
+  left: 73px;
+  font-size: 15px;
+  font-weight: 200px;
+}
+
+.bill-content {
+  font-size: 12px;
+  color: #ddd;
+  position: absolute;
+  top: 40px;
+  left: 75px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+.billtype-image {
+  height: 45px;
+  width: 45px;
+  /* border-radius: 25px; */
+  margin-left: 16px;
+  display: inline-block
+}
+.bill-money {
+  font-size: 24px;
+  font-weight: 800px;
+  float: right;
+  margin: 8px 10px 0 0;
 }

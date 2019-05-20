@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/home/home",
     "pages/bill/bill",
@@ -10,7 +9,8 @@
     "pages/billtype/billtype",
     "pages/billdetail/billdetail",
     "pages/addClassify/addClassify",
-    "pages/charts/charts"
+    "pages/charts/charts",
+    "pages/budget/budget"
   ],
   "window": {
     "backgroundTextStyle": "light",

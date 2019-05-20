@@ -1,4 +1,5 @@
 {
   "usingComponents": {
+    "i-progress": "../../dist/iview/progress/index"
   }
 }

@@ -1,0 +1,16 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='action' bindtap='back'>
+      <text class='cuIcon-back'></text> 返回
+    </view>
+    <view class='content' style='top:{{StatusBar}}px;'>修改预算</view>
+  </view>
+</view>
+<view class='header bg-white solid-bottom'>
+  <view class='iconbgcw2 iconbgcw text-white   iconfont {{icon}}'></view>
+  <view class='accountname'>{{accountclassifyname}}</view>
+</view>
+<view class="solid-bottom margin-bottom">
+  <i-input type="digit" right pred title="金额" maxlength="8" autofocus placeholder="{{ nummber1 }}" value='{{nummber}}' bindchange="bindInput" />
+</view>
+<button class='cu-btn block bg-blue margin-tb-sm lg margin' type='' bindtap='updateubdget'>保存</button>

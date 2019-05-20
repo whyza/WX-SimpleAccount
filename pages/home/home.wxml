@@ -47,7 +47,7 @@
             <i-icon type="activity" size="20" /> {{item.date}}
           </view>
           <view class='wno'>
-            <view class='billheader-type'  wx:if="{{payincome[index][1] != 0}}">
+            <view class='billheader-type' wx:if="{{payincome[index][1] != 0}}">
               支出 {{payincome[index][1]}}
             </view>
             <view class='billheader-srtype' wx:if="{{payincome[index][0] != 0}}">
@@ -58,7 +58,8 @@
         <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{100}}" wx:for="{{item.dateBills}}" wx:key="{{index}}" wx:for-item="bitem">
           <view slot="content" bindtap="showDetail" data-billid="{{bitem.billid}}">
             <view class='bill-container solid-bottom'>
-              <image class="billtype-image" lazy-load="true" src='{{bitem.classifyImage}}'></image>
+              <!-- <image class="billtype-image" lazy-load="true" src='{{bitem.classifyImage}}'></image> -->
+              <view class='billtype-image iconbgc text-white shadow  iconfont {{bitem.icon}}'></view>
               <view class='billtype'>
                 {{bitem.classfyName}}
               </view>

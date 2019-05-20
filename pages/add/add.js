@@ -34,13 +34,13 @@ Page({
   },
   queruClassify: function() {
     var that = this;
-    http.HttpRequst("GET", "queryAllBillClassfy", {
+    http.HttpRequst("GET", "queryAllTwoClassify", {
       userId: app.globalData.userInfo.userId,
       classifyType: app.globalData.classifyType
     }, true, 1, function(res) {
       that.setData({
         billClassfy: res.data,
-        height: 30 + 81*Math.ceil(res.data[0].childrenBillClassfy.length / 5.0)
+        // height: 30 + 81*Math.ceil(res.data[0].childrenBillClassfy.length / 5.0)
       })
     })
   },
@@ -62,7 +62,7 @@ Page({
             filePath: tempFilePaths[i],
             encoding:"base64",
             success:function(data){
-              console.log(data)
+              // console.log(data)
             }
           })
           //七牛上传
@@ -101,6 +101,11 @@ Page({
     wx.previewImage({
       current: images[idx], //当前图片地址
       urls: images
+    })
+  },
+  editClassify:function(){
+    wx.navigateTo({
+      url: '../../pages/addClassify/addClassify',
     })
   },
   back: function() {
@@ -160,6 +165,7 @@ Page({
     app.globalData.cid = acctwoarray[select_key]['accountClassifyId']
   },
   onShow: function() {
+    this.queruClassify()
     if (app.globalData.accoenarray == "") {
       this.queryAccClassifyInfoByfId();
     } else {
@@ -179,7 +185,7 @@ Page({
         isUpdate: true,
         billclassfyName: billdetails.classfyName,
         imagepath: billdetails.billImages,
-        billclassfyImg: billdetails.classifyImage,
+        billclassfyImg: billdetails.icon,
         billclassfyid: billdetails.classify,
         date: billdetails.date,
         nummber: billdetails.billMoney,
@@ -201,7 +207,7 @@ Page({
       app.globalData.key = "tab1"
       this.setData({
         billclassfyid: 10,
-        billclassfyImg: "http://pq1gborr2.bkt.clouddn.com/rice.png"
+        billclassfyImg: "icongaijiaofan"
       })
     }
     this.queruClassify();
@@ -305,11 +311,11 @@ Page({
   },
   swiperTab2: function(e) {
     var that = this;
-    that.get_wxml('#item' + e.detail.current, (rects) => {
-      that.setData({
-        height: rects[0].height
-      })
-    })
+    // that.get_wxml('#item' + e.detail.current, (rects) => {
+    //   that.setData({
+    //     height: rects[0].height
+    //   })
+    // })
     that.setData({
       currentTab2: e.detail.current
     });
@@ -317,11 +323,11 @@ Page({
   //滑动切换
   swiperTab: function(e) {
     var that = this;
-    that.get_wxml('#item' + e.detail.current, (rects) => {
-      that.setData({
-        height: rects[0].height
-      })
-    })
+    // that.get_wxml('#item' + e.detail.current, (rects) => {
+    //   that.setData({
+    //     height: rects[0].height
+    //   })
+    // })
     that.setData({
       currentTab: e.detail.current
     });
@@ -333,7 +339,7 @@ Page({
     this.setData({
       billclassfyid: e.currentTarget.dataset.billclassfyid,
       billclassfyName: e.currentTarget.dataset.name,
-      billclassfyImg: e.currentTarget.dataset.img
+      billclassfyImg: e.currentTarget.dataset.img,
     });
   },
   //点击切换模式
@@ -352,14 +358,14 @@ Page({
         app.globalData.classifyType = 1
         this.setData({
           billclassfyid: 46,
-          billclassfyImg: "http://pq1gborr2.bkt.clouddn.com/gzl.png"
+          billclassfyImg: "icongongzizhuanhu"
         })
         this.queruClassify();
       } else if (app.globalData.key == "tab1") {
         app.globalData.classifyType = 0;
         this.setData({
           billclassfyid: 10,
-          billclassfyImg: "http://pq1gborr2.bkt.clouddn.com/rice.png"
+          billclassfyImg: "icongaijiaofan"
         })
         this.queruClassify();
       }

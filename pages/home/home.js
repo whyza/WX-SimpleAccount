@@ -1,7 +1,7 @@
 const util = require('../../utils/util.js')
 const app = getApp();
 const http = require('../../utils/request.js')
-
+import NumberAnimate from "../../utils/NummberAnimate";
 Page({
 
   /**
@@ -71,8 +71,22 @@ Page({
     this.setData({
       payincome: payincome,
       sumincome: sumincome,
-      // sumpay: sumpay
+      sumpay: sumpay
     })
+
+    // let num1 = sumpay;
+    // let n1 = new NumberAnimate({
+    //   from: num1,//开始时的数字
+    //   speed: 500,// 总时间
+    //   refreshTime: 100,//  刷新一次的时间
+    //   decimals: 2,//小数点后的位数
+    //   onUpdate: () => {//更新回调函数
+    //     this.setData({
+    //       sumpay: n1.tempValue
+    //     });
+    //   }
+    // });
+
     var that = this;
     var difference = sumpay - baseNumber //与原数字的差
     var absDifferent = Math.abs(difference) //差取绝对值

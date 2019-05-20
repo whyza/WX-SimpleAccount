@@ -1,3 +1,19 @@
+/* .iconbgc, .iconbgcw {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50px;
+}
+
+.iconbgc {
+  background-color: #0396ff;
+}
+
+.iconbgcw {
+  background-color: #f6f6f6;
+} */
+
 .quick {
   font-size: 26rpx;
   color: #ddd;
@@ -95,14 +111,14 @@ i-badge {
   /* height: 200px; */
 }
 
-.typeImage {
-  width: 45px;
-  height: 45px;
+/* .typeImage {
+  width: 50px;
+  height: 50px;
   display: block;
   position: relative;
-  font-size: 48rpx;
-  margin: 0 auto;
-}
+  /* font-size: 53rpx; */
+  /* margin: 0 auto; */
+/* }  */
 
 .item {
   width: 20%;
@@ -151,13 +167,13 @@ i-badge {
   font-size: 48rpx;
   position: absolute;
   top: 10px;
-  right: 50px;
+  right: 21px;
   z-index: 9999999;
 }
 
 .swtab {
   display: flex;
-  width: 180px;
+  width: 60%;
 }
 
 .litem {

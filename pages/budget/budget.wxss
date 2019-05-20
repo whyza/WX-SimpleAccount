@@ -1,0 +1,21 @@
+.header {
+  height: 80px;
+  margin-bottom: 5px;
+}
+
+.iconbgcw2 {
+  color: #000;
+  float: left;
+  margin-left: 2%;
+  margin-top: 17px;
+}
+
+.accountname {
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 17%;
+  padding-top: 22px;
+}
+.margin-bottom{
+  margin-bottom: 10px;
+}

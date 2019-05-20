@@ -8,24 +8,48 @@
     <view class='content' style='top:{{StatusBar}}px;'>周消费报表</view>
   </view>
 </view>
+<view class="cu-bar bg-white solid-bottom margin-top margin">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text>
+    <text class="text-df text-bold">总支出</text>
+  </view>
+  <view class='text-price fr money'>120</view>
+</view>
 
-<view class='header bg-white  solid-bottom margin-top margin'>
+<!-- <view class='header bg-white  solid-bottom margin-top margin'>
   <view class="allzhichu fl ">
     总支出
   </view>
-  <view class='text-price fr money'>2520</view>
-</view>
+</view> -->
 <view class="containert margin ">
   <view class="swtab shadow">
-    <view class="litem {{current=='tab1'?'active':''}}" data-current="tab1" bindtap="clickTab">支出</view>
-    <view class="ritem {{current=='tab2'?'active':''}}" data-current="tab2" bindtap="clickTab">收入</view>
+    <view class="litem {{current=='tab1'?'active':''}}" data-current="tab1" bindtap="clickTab">饼图</view>
+    <view class="ritem {{current=='tab2'?'active':''}}" data-current="tab2" bindtap="clickTab">排行</view>
   </view>
-  <view class='shadow'>
+  <view class='shadow solid-bottom '>
     <view class="container" wx:if="{{current == 'tab1'}}">
       <ff-canvas id="guage-dom" canvas-id="guage" ec="{{ec}}"></ff-canvas>
     </view>
-     <view class="container" wx:if="{{current == 'tab2'}}">
+    <view class="container" wx:if="{{current == 'tab2'}}">
       <ff-canvas id="gungeline" canvas-id="gungeline" opts="{{opts}}"></ff-canvas>
     </view>
   </view>
+</view>
+<view class='containert margin'>
+  <view class='nums' wx:for="{{piedata}}" wx:key="index" wx:for-item="item">
+    <view class='bill-container shadow pl'>
+      <view class='billtype-image iconbgc text-white shadow  iconfont {{item.icon}}'></view>
+      <view class='billtype'>
+        {{item.name}}
+      </view>
+      <view class='bmoney text-price text-orange'>
+        {{item.nummber}}
+      </view>
+      <text class="much">{{item.nums}}笔</text>
+      <view class="progress-item bill-content">
+        <i-progress percent=" {{item.nummber}}" status="{{item.nummber>100?'wrong':'success' }}" hide-info></i-progress>
+      </view>
+    </view>
+  </view>
+
 </view>

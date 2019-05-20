@@ -111,6 +111,9 @@ Page({
       "userId": app.globalData.userInfo.userId
     }, true, 1, function(res) {
       app.globalData.piedata = res.data;
+      that.setData({
+        piedata: res.data
+      })
       that.ecComponent = that.selectComponent('#guage-dom');
       that.ecComponent.init(initChart);
     })

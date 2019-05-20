@@ -1,0 +1,36 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;padding-right:131px">
+    <view class='action'>
+      <text class='cuIcon-back' bindtap='back'></text> 返回
+    </view>
+    <view class='content' style='top:{{StatusBar}}px;'>新增分类</view>
+  </view>
+
+</view>
+<view class='typeheader solid-bottom'>
+  <i-input right placeholder="请输入分类名称" title="" value='{{classifyName}}' bindchange="bindInputRemark" />
+  <text class='iconbgc2 iconbgc text-white shadow typeImage  typeImage2 iconfont {{choseicon}}'></text>
+</view>
+<view class='choseClassify'>
+  <swiper class='swiper-box' current="{{currentTab}}" duration="300" bindchange="swiperTab" style='height:180px;'>
+    <block wx:for="{{icon}}" wx:key="index1" wx:for-index="index1" wx:for-item="item1">
+      <swiper-item style="height:200px">
+        <view class='type'>
+          <view class='billtypet bg-white'>
+            <view class='container'>
+              <view wx:for="{{item1}}" wx:key="index" wx:for-index="index" wx:for-item="item" data-icon="{{item}}" class='item' bindtap='choseIcon'>
+                <text class='{{choseicon == item?"iconbgc text-white":"iconbgcw" }} shadow typeImage  iconfont {{item}}'></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="dots">
+    <block wx:for="{{icon}}" wx:key="unique">
+      <view class="dot{{index == currentTab ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+<button class='cu-btn block bg-blue margin-tb-sm lg' type='' bindtap='addClassify'>保存</button>

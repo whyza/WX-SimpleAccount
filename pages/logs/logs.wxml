@@ -1,10 +1,70 @@
 <view class="cu-custom" style="height:{{CustomBar}}px;">
   <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
-    <!-- <navigator class='action border-custom' open-type="navigateBack" delta="1" hover-class="none" style='width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)'> -->
-      <view class='action'>
+    <view class='action'>
       <text class='cuIcon-back'></text> 返回
     </view>
     <!-- </navigator> -->
-    <view class='content' style='top:{{StatusBar}}px;'>消费报表</view>
+    <view class='content' style='top:{{StatusBar}}px;'>预算</view>
   </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text>
+    <text class="text-xl text-bold">月预算</text>
+  </view>
+</view>
+<view class="bg-white padding-top shadow">
+  <view class='imgheight solid-bottom'>
+    <image src='../../image/huan.png' class='limage fl'></image>
+    <view class=''>
+      <view class='headtitle'>
+        剩余月预算
+      </view>
+      <view class='text-price  fonts'>
+        2500
+      </view>
+    </view>
+  </view>
+  <view class='monthsums solid-bottom'>
+    <view class='fl left'>
+      <view class='title'>
+        本月消费
+      </view>
+      <view class="text-price fontsize16">
+        100
+      </view>
+    </view>
+    <view class='right'>
+      <view class='title'>
+        剩余天数
+      </view>
+      <view class="text-price fontsize16">
+        19
+      </view>
+    </view>
+  </view>
+</view>
+<view class='containert  margin'>
+  <view class=' bg-white {{budgetData.length - 1 != index ? "nums":""}}' wx:for="{{budgetData}}" wx:key="index" wx:for-item="item">
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="action">
+        <text class="cuIcon-titles text-orange"></text>
+        <text class="text-sm">{{item.accountClassifyName}}</text>
+      </view>
+    </view>
+    <view class='bill-container solid-bottom  pl' data-accid='{{item.accountClassifyId}}' wx:for="{{item.budgetVoList}}" wx:key="index" wx:for-item="item" bindtap='tosetbudget' data-icon='{{item.icon}}' data-accountClassifyName='{{item.accountClassifyName}}'>
+      <view class='iconbgcw2 iconbgcw text-white   iconfont {{item.icon}}'></view>
+      <view class='billtype'>
+        {{item.accountClassifyName}}
+      </view>
+      <view class='bmoney text-price text-orange'>
+        {{item.budgetNummber}}
+        <text class='cuIcon-right lg text-grey' style='font-size:20px;'></text>
+      </view>
+      <!-- <view class="progress-item bill-content">
+        <i-progress percent=" {{item.budgetNummber}}" status="{{item.budgetNummber>0?'success':'wrong' }}" hide-info></i-progress>
+      </view> -->
+    </view>
+  </view>
+
 </view>

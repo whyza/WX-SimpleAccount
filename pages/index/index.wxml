@@ -1,1 +1,25 @@
-<button wx:if="{{hasUserInfo && canIUse}}" class='btn' type='primary' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>
+<view class="container" wx:if="{{hasUserInfo && canIUse}}">
+
+  <block>
+    <view class="cu-custom" style="height:{{CustomBar}}px;">
+      <view class="cu-bar fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+        <view class='content' style='top:{{StatusBar}}px;'>记账小帮手</view>
+      </view>
+    </view>
+    <view class="contents ">
+      <view class="hd">
+        <image class="wave" src="../../image/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="../../image/wave.png" mode="aspectFill"></image>
+      </view>
+    </view>
+  </block>
+  <view class='conte'>
+    <image class="logo" src="../../image/logo.png"></image>
+    <text class="shouq">授权完善你的昵称、头像等公开信息</text>
+    <text class="getwall">获得更好的体验</text>
+
+  </view>
+  <view class="userinfo">
+    <button class='cu-btn block bg-red margin-tb-sm lg btn' type='' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>
+  </view>
+</view>
