@@ -101,18 +101,27 @@ Page({
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
     current: 'tab1',
+    sumnummber:""
   },
   onLoad: function() {
     this.loadData();
   },
   loadData: function() {
     var that = this;
+    var sum = 0;
     http.HttpRequst("GET", "queryWeekBill", {
       "userId": app.globalData.userInfo.userId
     }, true, 1, function(res) {
       app.globalData.piedata = res.data;
+      console.log(res.data)
       that.setData({
         piedata: res.data
+      })
+      for(var i = 0;i<res.data.length;i++){
+        sum+=res.data[i].nummber;
+      }
+      that.setData({
+        sumnummber:sum
       })
       that.ecComponent = that.selectComponent('#guage-dom');
       that.ecComponent.init(initChart);

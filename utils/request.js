@@ -2,8 +2,9 @@ module.exports = {
   HttpRequst: HttpRequst
 }
 // const baseUrl = "http://localhost:8081/"; //测试环境
-// const baseUrl = "https://iazuresky.com:8443/"; //正式环境
-const baseUrl = "http://192.168.199.211:8081/"; //测试环境
+const baseUrl = "https://iazuresky.com:8443/"; //正式环境
+// const baseUrl = "http://192.168.199.211:8081/"; //测试环境
+// const baseUrl = "http://iazuresky.com:8081/"; //正式环境
 function HttpRequst(method, url, params, loading, header, callBack) {
   if (loading == true) {
     wx.showToast({

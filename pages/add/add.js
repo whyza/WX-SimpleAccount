@@ -73,7 +73,7 @@ Page({
           }, (error) => {
             console.log('error: ' + error);
           }, {
-            region: 'ECN',
+            region: 'ECN2',
             domain: app.globalData.ImageUrl,
             uptokenURL: app.globalData.URL + '/getToken',
           }, (res) => {

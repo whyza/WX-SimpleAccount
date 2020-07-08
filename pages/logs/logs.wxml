@@ -21,7 +21,7 @@
         剩余月预算
       </view>
       <view class='text-price  fonts'>
-        2500
+        {{syysuan}}
       </view>
     </view>
   </view>
@@ -31,15 +31,15 @@
         本月消费
       </view>
       <view class="text-price fontsize16">
-        100
+        {{ysf}}
       </view>
     </view>
     <view class='right'>
       <view class='title'>
         剩余天数
       </view>
-      <view class="text-price fontsize16">
-        19
+      <view class="fontsize16 synummber">
+        {{synummber}}
       </view>
     </view>
   </view>

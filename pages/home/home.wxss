@@ -335,3 +335,17 @@
   float: right;
   margin: 8px 10px 0 0;
 }
+.nodata{
+  width: 115px;
+  height: 64px;
+}
+.margintop50{
+  margin-top: 50px;
+
+}
+.textnodata{
+  text-align: center;
+  font-size: 20px;
+  color: #999;
+  margin-top: 10px;
+}

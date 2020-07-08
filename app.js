@@ -28,7 +28,7 @@ App({
     current: "homepage",
     // URL: 'http://localhost:8081/',
     URL: 'https://iazuresky.com:8443/',
-    ImageUrl: 'https://iazuresky.com'
+    ImageUrl: 'http://imgs.iazuresky.com/'
   },
   /**
    * 封装wx.request请求

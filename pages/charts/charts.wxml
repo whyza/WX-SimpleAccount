@@ -13,7 +13,7 @@
     <text class="cuIcon-titles text-orange"></text>
     <text class="text-df text-bold">总支出</text>
   </view>
-  <view class='text-price fr money'>120</view>
+  <view class='text-price fr money'>{{sumnummber}}</view>
 </view>
 
 <!-- <view class='header bg-white  solid-bottom margin-top margin'>

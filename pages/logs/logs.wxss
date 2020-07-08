@@ -96,3 +96,6 @@
 .iconbgcw2 {
   color: #000;
 }
+.synummber{
+  padding-left:66% 
+}

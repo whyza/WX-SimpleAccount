@@ -36,10 +36,12 @@
       <text class='cuIcon-search lg text-black right mr10' style='font-size:25px;'></text>
     </view>
     <view class="{{scrollTop>130 ? 'billstop' : 'bills'}}">
-      <view wx:if="{{bill == ''}}" class='padding text-center'>
-        <view class="padding-xl radius shadow-blur bg-gradual-blue  margin-top ">
+      <view wx:if="{{bill == ''}}" class='padding text-center margintop50'>
+        <!-- <view class="padding-xl radius shadow-blur bg-gradual-blue  margin-top ">
           <view>本月还未开始记账哦</view>
-        </view>
+        </view> -->
+        <image src='../../image/nodata.png' class='nodata'></image>
+        <view class='textnodata'>暂无任何账单信息</view>
       </view>
       <view class='bill bg-white {{bill.length - 1 != index ? " billm":""}}' wx:for="{{bill}}" wx:key="{{index}}" wx:for-item="item">
         <view class='bill-header text-grey'>
