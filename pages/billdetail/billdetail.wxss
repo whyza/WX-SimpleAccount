@@ -28,7 +28,7 @@
 }
 
 .w100 {
-  width: 170px;
+  width: 42%;
   margin: 10px 0 20px 0;
 }
 
